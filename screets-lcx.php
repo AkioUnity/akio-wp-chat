@@ -80,7 +80,7 @@ final class LiveChatX
 	 * @var string
 	 * @since Live Chat X (2.4.0)
 	 */
-	public $edition = 'WordPress';
+	public $edition = 'Whatsapp';
 
 	/**
 	 * Plugin website URL.
@@ -197,7 +197,7 @@ final class LiveChatX
 	private function define_constants() {
 
 		// Some useful constants
-		define( 'LCX_NAME', 'Screets ' . $this->name );
+		define( 'LCX_NAME', 'Lamoga Whatsapp ' . $this->name );
 		define( 'LCX_SNAME', $this->name );
 		define( 'LCX_EDITION', $this->edition );
 		define( 'LCX_VERSION', $this->version );
@@ -432,9 +432,9 @@ if( is_admin() ) {
 
 				require LCX_PATH . '/core/library/update-checker/plugin-update-checker.php';
 				$checker = Puc_v4_Factory::buildUpdateChecker(
-					'https://support.lamoga.de/updates/wp/?action=get_metadata&slug=screets-' . LCX_SLUG,
+					'https://support.lamoga.de/updates/wp/?action=get_whatsapp' . LCX_SLUG,
 					__FILE__,
-					'screets-' . LCX_SLUG
+					'whatsapp-' . LCX_SLUG
 				);
 				$checker->addQueryArgFilter( '_fn_lcx_filter_updates' );
 
