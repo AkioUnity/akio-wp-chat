@@ -1,0 +1,2034 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Screets Live Chat\n"
+"POT-Creation-Date: 2018-07-10 11:39+0200\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Screets <support@screets.io>\n"
+"Language-Team: Screets <support@screets.io>\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.7\n"
+"X-Poedit-KeywordsList: __;_e;_n;_x;_ex;_nx\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100 >= 3 "
+"&& n%100<=10 ? 3 : n%100 >= 11 && n%100<=99 ? 4 : 5;\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: core/library\n"
+"X-Poedit-SearchPathExcluded-1: assets\n"
+
+#: core/admin/auto-msgs.php:57
+#, fuzzy
+#| msgid "Connection"
+msgid "Conditions"
+msgstr "اتصال"
+
+#: core/admin/auto-msgs.php:65 core/classes/ajax.class.php:211
+msgid "Message"
+msgstr "الرسالة"
+
+#: core/admin/auto-msgs.php:87
+msgid "Current page URL"
+msgstr ""
+
+#: core/admin/auto-msgs.php:88
+msgid "Referral URL"
+msgstr ""
+
+#: core/admin/auto-msgs.php:89
+msgid "Single page views"
+msgstr ""
+
+#: core/admin/auto-msgs.php:90
+msgid "Total visits"
+msgstr ""
+
+#: core/admin/auto-msgs.php:99
+msgid "is"
+msgstr ""
+
+#: core/admin/auto-msgs.php:101
+msgid "is not"
+msgstr ""
+
+#: core/admin/auto-msgs.php:103
+msgid "starts with"
+msgstr ""
+
+#: core/admin/auto-msgs.php:105
+msgid "ends with"
+msgstr ""
+
+#: core/admin/auto-msgs.php:107
+msgid "contains"
+msgstr ""
+
+#: core/admin/auto-msgs.php:109
+msgid "does not contains"
+msgstr ""
+
+#: core/admin/auto-msgs.php:111
+msgid "is unknown"
+msgstr ""
+
+#: core/admin/auto-msgs.php:115
+msgid "is more than"
+msgstr ""
+
+#: core/admin/auto-msgs.php:117
+msgid "is less than"
+msgstr ""
+
+#: core/admin/auto-msgs.php:122
+msgid "Enter URL"
+msgstr ""
+
+#: core/admin/auto-msgs.php:129
+#, fuzzy
+#| msgid "Secondary"
+msgid "seconds"
+msgstr "ثانوي"
+
+#: core/admin/auto-msgs.php:139
+msgid "New condition"
+msgstr ""
+
+#: core/classes/admin.class.php:112 core/classes/admin.class.php:113
+#: core/classes/ajax.class.php:212 core/classes/app.class.php:242
+msgid "Chat Console"
+msgstr "وحدة التحكم في الدردشة"
+
+#: core/classes/admin.class.php:245
+msgid "Sign-in"
+msgstr "تسجيل دخول"
+
+#: core/classes/admin.class.php:246
+msgid "Sign-out"
+msgstr "تسجيل خروج"
+
+#: core/classes/admin.class.php:247 core/options.php:176
+msgid "Online"
+msgstr "متصل"
+
+#: core/classes/admin.class.php:248 core/options.php:195
+msgid "Offline"
+msgstr "غير متصل"
+
+#: core/classes/admin.class.php:249
+#: core/templates/admin/console/modal.profile.php:64
+msgid "Close"
+msgstr "إغلاق"
+
+#: core/classes/admin.class.php:250
+msgid "Settings"
+msgstr "الإعدادات"
+
+#: core/classes/admin.class.php:251 core/options.php:299 core/options.php:312
+#: core/options.php:325 core/options.php:339
+msgid "Name"
+msgstr "الاسم"
+
+#: core/classes/admin.class.php:252 core/classes/form.class.php:132
+#: core/functions/forms.php:90 core/options.php:298 core/options.php:311
+#: core/options.php:324 core/options.php:338 core/options.php:516
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+#: core/classes/admin.class.php:253 core/functions/forms.php:95
+#: core/options.php:301 core/options.php:314 core/options.php:327
+#: core/options.php:341
+msgid "Phone"
+msgstr "الهاتف"
+
+#: core/classes/admin.class.php:254
+msgid "Country"
+msgstr "الدولة"
+
+#: core/classes/admin.class.php:255
+msgid "Notes"
+msgstr "ملاحظات"
+
+#: core/classes/admin.class.php:256
+msgid "Case no"
+msgstr ""
+
+#: core/classes/admin.class.php:257
+msgid "Looking at"
+msgstr "انظر الي "
+
+#: core/classes/admin.class.php:258
+msgid "Profile Image"
+msgstr "صورة الملف الشخصي "
+
+#: core/classes/ajax.class.php:103 core/classes/ajax.class.php:124
+msgid "New offline message"
+msgstr "رسالة غير متصلة جديدة."
+
+#: core/classes/ajax.class.php:150
+msgid "You don't have permission to perform this action"
+msgstr "ليس لديك إذن لتنفيذ هذا الإجراء"
+
+#: core/classes/ajax.class.php:208
+#, php-format
+msgid "[%s] New chat started by %s"
+msgstr "[%s] بدأت الدردشة الجديدة بواسطة%s"
+
+#: core/classes/ajax.class.php:209
+msgid "Case No"
+msgstr "حالة رقم"
+
+#: core/classes/ajax.class.php:210
+msgid "Visitor Name"
+msgstr "اسم الزائر"
+
+#: core/classes/ajax.class.php:221
+#, php-format
+msgid "%s is started chat."
+msgstr "بدأ%s الدردشة."
+
+#: core/classes/ajax.class.php:278
+msgid "Something went wrong!  Please try again."
+msgstr "هناك خطأ ما! حاول مرة اخرى."
+
+#: core/classes/app.class.php:101 core/classes/app.class.php:103
+#, fuzzy
+#| msgid "Messages"
+msgid "Auto-messages"
+msgstr "الرسائل"
+
+#: core/classes/app.class.php:102
+#, fuzzy
+#| msgid "Message"
+msgid "Auto-message"
+msgstr "الرسالة"
+
+#: core/classes/app.class.php:104
+msgid "Parent item:"
+msgstr ""
+
+#: core/classes/app.class.php:105
+msgid "All"
+msgstr ""
+
+#: core/classes/app.class.php:106
+msgid "View"
+msgstr ""
+
+#: core/classes/app.class.php:107 core/classes/app.class.php:108
+msgid "Add new"
+msgstr ""
+
+#: core/classes/app.class.php:109
+msgid "Edit"
+msgstr ""
+
+#: core/classes/app.class.php:110
+msgid "Update"
+msgstr ""
+
+#: core/classes/app.class.php:111
+msgid "Search"
+msgstr ""
+
+#: core/classes/app.class.php:112 core/classes/app.class.php:113
+#, fuzzy
+#| msgid "No chats found."
+msgid "Not found"
+msgstr "لم يتم العثور على دردشات "
+
+#: core/classes/nav-menus.class.php:45
+msgid "Live Chat Links"
+msgstr ""
+
+#: core/classes/nav-menus.class.php:59
+msgid "Chat now!"
+msgstr "ابدأ الدردشة الآن!"
+
+#: core/classes/nav-menus.class.php:60
+msgid "Shows up chat popup."
+msgstr "اظهر نافذة منبثقة للدردشة"
+
+#: core/classes/nav-menus.class.php:89
+msgid "Select All"
+msgstr "حدد الكل"
+
+#: core/classes/options.class.php:33 core/classes/options.class.php:35
+msgid "Options"
+msgstr "اختيارات"
+
+#: core/classes/options.class.php:46
+#, php-format
+msgid "%s Options"
+msgstr "خيارات %s"
+
+#: core/functions/forms.php:89
+msgid "Text"
+msgstr "نص"
+
+#: core/functions/forms.php:91
+msgid "Textarea"
+msgstr "مساحة النص"
+
+#: core/functions/forms.php:92 core/options.php:1099 core/options.php:1114
+msgid "Subject"
+msgstr "عنوان الرسالة"
+
+#: core/functions/forms.php:93
+msgid "Question / issue"
+msgstr "سؤال/قضية"
+
+#: core/functions/forms.php:94
+msgid "Name &amp; Email"
+msgstr "الاسم &amp; البريد الالكتروني "
+
+#: core/functions/forms.php:96
+msgid "Support categories"
+msgstr "فئات الدعم"
+
+#: core/functions/users.php:25
+msgid "Manage options"
+msgstr "ضبط الاختيارات"
+
+#: core/functions/users.php:26
+msgid "Chat with visitors"
+msgstr "الدردشة مع الزوار"
+
+#: core/options.php:54
+msgid "General"
+msgstr "عام"
+
+#: core/options.php:58
+msgid "Design"
+msgstr "التصميم"
+
+#: core/options.php:62 core/options.php:989
+#: core/templates/admin/console/body.php:127
+msgid "Chats"
+msgstr "الدردشات"
+
+#: core/options.php:66
+msgid "Site"
+msgstr "الموقع"
+
+#: core/options.php:70
+msgid "Users"
+msgstr "المستخدمين"
+
+#: core/options.php:74 core/options.php:996
+msgid "Messages"
+msgstr "الرسائل"
+
+#: core/options.php:78
+msgid "Real-time"
+msgstr "الوقت- الحقيقي"
+
+#: core/options.php:82 core/options.php:705
+msgid "Advanced"
+msgstr "الإعدادات المتقدمة"
+
+#: core/options.php:91
+msgid "Display"
+msgstr "تشغيل"
+
+#: core/options.php:99
+msgid "Show up for logged in WordPress users only"
+msgstr ""
+
+#: core/options.php:100
+msgid "Hide on mobile devices"
+msgstr "اخفي علي أجهزة الهاتف المحمول"
+
+#: core/options.php:101
+msgid "Hide from pages that uses SSL"
+msgstr "إخفاء من الصفحات التي تستخدم SSL"
+
+#: core/options.php:102
+msgid "Hide when all operators are offline"
+msgstr "إخفاء عندما تكون جميع المشغلات في وضع عدم الاتصال"
+
+#: core/options.php:109
+msgid "Where to show up?"
+msgstr "اين يتم العرض؟"
+
+#: core/options.php:111
+msgid "Show everywhere"
+msgstr "اخفي في كل الاماكن"
+
+#: core/options.php:112
+msgid "Hide everywhere"
+msgstr "اخفي في كل الاماكن"
+
+#: core/options.php:120
+msgid "Except those pages"
+msgstr "ماعدا هذه الصفحات"
+
+#: core/options.php:126
+msgid "Display on specific pages"
+msgstr "عرض على صفحات محددة"
+
+#: core/options.php:127
+msgid "Homepage"
+msgstr "الصفحة الرئيسيه"
+
+#: core/options.php:129 core/options.php:140
+msgid "Always show"
+msgstr "اظهر دائما"
+
+#: core/options.php:130 core/options.php:141
+msgid "Always hide"
+msgstr "اخفي دائما"
+
+#: core/options.php:138
+msgid "Blog-related pages"
+msgstr "صفحات ذات صلة بالمدونة"
+
+#: core/options.php:152
+msgid "Licensing"
+msgstr "الترخيص"
+
+#: core/options.php:159
+msgid ""
+"It is required to activate the plugin and get <strong>free updates</strong>."
+msgstr ""
+"يلزم تنشيط المكون الإضافي والحصول على <strong> تحديثات مجانية </strong>."
+
+#: core/options.php:159
+msgid ""
+"Note that you might need to re-login WordPress after updating your API key."
+msgstr ""
+"لاحظ أنك قد تحتاج إلى إعادة تسجيل الدخول إلى وورد بريس بعد تحديث مفتاح واجهة "
+"برمجة التطبيقات."
+
+#: core/options.php:169
+msgid "Response Info"
+msgstr "معلومات الاستجابة"
+
+#: core/options.php:170
+msgid ""
+"Set your live chat hours to an <strong>achievable level</strong>. Because for "
+"customers, “live chat” implies an almost instant response, so a delayed reply "
+"to a chat is a much poorer experience than a slow email reply."
+msgstr ""
+"عيّن ساعات الدردشة المباشرة على <strong> مستوى قابل للتحقيق</strong>. نظرًا "
+"لأنه بالنسبة إلى العملاء ، فإن \"الدردشة المباشرة\" تشير إلى استجابة فورية "
+"تقريبًا ، لذا فإن الرد المتأخر على الدردشة هو تجربة أكثر فقراً من الرد البطيء "
+"على البريد الإلكتروني."
+
+#: core/options.php:175 core/options.php:1388
+msgid "Typically replies within..."
+msgstr "الردود عادة في خلال..."
+
+#: core/options.php:176
+msgid "At least one operator is online"
+msgstr "مشغل واحد على الأقل متصل بالإنترنت"
+
+#: core/options.php:178 core/options.php:197
+msgid "Not specified"
+msgstr "غير محدد"
+
+#: core/options.php:179 core/options.php:198
+msgid "a few minutes"
+msgstr "دقائق قليلة"
+
+#: core/options.php:180 core/options.php:199
+msgid "15 minutes"
+msgstr "15 دقيقة"
+
+#: core/options.php:181 core/options.php:200
+msgid "30 minutes"
+msgstr "30 دقيقة"
+
+#: core/options.php:182 core/options.php:201
+msgid "an hour"
+msgstr "ساعة"
+
+#: core/options.php:183 core/options.php:202
+msgid "a few hours"
+msgstr "ساعات قليلة"
+
+#: core/options.php:184 core/options.php:203
+msgid "a day"
+msgstr "يوم"
+
+#: core/options.php:185 core/options.php:204
+msgid "1 business day"
+msgstr "1 يوم عمل"
+
+#: core/options.php:186 core/options.php:205
+msgid "2 business days"
+msgstr "2 أيام عمل"
+
+#: core/options.php:187 core/options.php:206
+msgid "3 business days"
+msgstr "3 أيام عمل"
+
+#: core/options.php:195
+msgid "No operators online"
+msgstr "لا يوجد مشغلين متصلين"
+
+#: core/options.php:272
+msgid "Offline capabilities"
+msgstr "الصلاحيات في حال عدم الإتصال"
+
+#: core/options.php:278
+msgid "Initial response"
+msgstr "الاستجابة الأولية"
+
+#: core/options.php:279
+msgid ""
+"How the application should response when visitors try to start a <strong>new "
+"conversation</strong>?"
+msgstr ""
+"كيف يجب أن يستجيب التطبيق عندما يحاول الزائر بدء <strong> محادثة جديدة </"
+"strong>؟"
+
+#: core/options.php:281
+msgid "Allow visitors to start new conversation"
+msgstr "السماح للزوار الجدد ببدء دردشة جديدة"
+
+#: core/options.php:281
+msgid "Shows up collector card"
+msgstr ""
+
+#: core/options.php:282
+msgid "Show offline form"
+msgstr "اظهر نموذج غير متصل"
+
+#: core/options.php:295 core/options.php:847
+msgid "Collector card"
+msgstr ""
+
+#: core/options.php:296 core/options.php:322
+msgid "Select visible fields:"
+msgstr "حدد الحقول المرئية:"
+
+#: core/options.php:300 core/options.php:313 core/options.php:326
+#: core/options.php:340
+msgid "Company name"
+msgstr "اسم الشركة"
+
+#: core/options.php:309 core/options.php:336
+msgid "Select required fields:"
+msgstr "حدد الحقول المطلوبة:"
+
+#: core/options.php:321
+msgid "Offline form"
+msgstr "نموذج غير متصل"
+
+#: core/options.php:328 core/options.php:342 core/options.php:1172
+msgid "Ask question"
+msgstr "اسال سؤال"
+
+#: core/options.php:350 core/options.php:821
+msgid "GDPR Compliance"
+msgstr ""
+
+#: core/options.php:352
+msgid "Show \"I consent...\" checkbox"
+msgstr "عرض مربع الاختيار \"أوافق ...\""
+
+#: core/options.php:365
+msgid "Date/time format"
+msgstr "صيغة الوقت/التاريخ"
+
+#: core/options.php:370
+msgid "Date format"
+msgstr "صيغة التاريخ"
+
+#: core/options.php:476
+msgid "Site info"
+msgstr "معلومات الموقع"
+
+#: core/options.php:481 core/options.php:483
+msgid "Site name"
+msgstr "اسم الموقع"
+
+#: core/options.php:482
+msgid "We will show this name as your site/company name when needed"
+msgstr "سوف نعرض هذا الاسم كاسم لموقعك / شركتك عند الحاجة"
+
+#: core/options.php:489 core/options.php:491
+msgid "Site url"
+msgstr "رابط الموقع"
+
+#: core/options.php:496
+msgid "Site logo"
+msgstr "شعار الموقع"
+
+#: core/options.php:501
+msgid "Site email"
+msgstr "البريد الالكتروني للموقع"
+
+#: core/options.php:504
+msgid "\"FROM\" part of all emails sending to your visitors"
+msgstr ""
+
+#: core/options.php:510 core/options.php:511 core/options.php:1262
+#: core/options.php:1270
+msgid "Optional"
+msgstr "إختياري"
+
+#: core/options.php:511
+msgid "Your visitors will reply to this email."
+msgstr "سوف يرد زوارك على هذا البريد الإلكتروني."
+
+#: core/options.php:516
+msgid "Logo width"
+msgstr "عرض الشعار"
+
+#: core/options.php:517
+msgid "If original size 100px, we recommend you to set 50px for retina displays"
+msgstr "إذا كان الحجم الأصلي 100 بكسل ، نوصيك بتعيين 50 بكسل لشاشات retina"
+
+#: core/options.php:527
+msgid "Privacy policy URL"
+msgstr "رابط سياسة الخصوصية"
+
+#: core/options.php:538
+msgid "Colors"
+msgstr "الألوان"
+
+#: core/options.php:543
+msgid "Primary"
+msgstr "أولي"
+
+#: core/options.php:550
+msgid "Secondary"
+msgstr "ثانوي"
+
+#: core/options.php:557
+msgid "Highlight"
+msgstr "تسليط الضوء"
+
+#: core/options.php:568
+msgid "Appearance"
+msgstr "المظهر"
+
+#: core/options.php:573
+msgid "Widget position"
+msgstr "مكان الاضافة"
+
+#: core/options.php:576
+msgid "Bottom Left"
+msgstr "زر اليسار"
+
+#: core/options.php:577
+msgid "Bottom Right"
+msgstr "زر اليمين"
+
+#: core/options.php:583
+msgid "Starter"
+msgstr "زر التشغيل"
+
+#: core/options.php:584
+msgid "Starter size"
+msgstr "حجم زر التشغيل"
+
+#: core/options.php:595
+msgid "Starter icon size"
+msgstr "حجم ايقونة زر التشغيل"
+
+#: core/options.php:605
+msgid "Popup width"
+msgstr "عرض النافذة المنبثقة"
+
+#: core/options.php:637
+msgid "Radius"
+msgstr "القطر"
+
+#: core/options.php:638
+msgid "Normal"
+msgstr "عادي"
+
+#: core/options.php:649
+msgid "Big"
+msgstr "كبير"
+
+#: core/options.php:659
+msgid "Offset"
+msgstr "طباعة الاوفست"
+
+#: core/options.php:659
+msgid "Sets the distance between the page corner and the chat widget"
+msgstr "لتعيين المسافة بين زاوية الصفحة وقطعة الدردشة"
+
+#: core/options.php:660
+msgid "Horizontal offset"
+msgstr "طباعة اوفست افقي"
+
+#: core/options.php:671
+msgid "Vertical offset"
+msgstr "طباعة اوفست عمودي"
+
+#: core/options.php:682
+msgid "Paste your embed code(s) here."
+msgstr "الصق شفرة (شفرات) التضمين الخاصة بك هنا."
+
+#: core/options.php:682 core/options.php:688
+msgid "Example"
+msgstr "مثال"
+
+#: core/options.php:688
+msgid "Font family name."
+msgstr "اسم الFont family."
+
+#: core/options.php:696
+msgid "Alternative font family name."
+msgstr "الخط البديل لfont family."
+
+#: core/options.php:696
+msgid ""
+"It will be used mostly for small texts, buttons, message-balloons and form "
+"elements."
+msgstr ""
+"سيتم استخدامه في الغالب للنصوص الصغيرة والأزرار ورسالة-البالونات وعناصر "
+"النموذج."
+
+#: core/options.php:696
+msgid "Leave empty to use default."
+msgstr "اتركه فارغًا لاستخدامه كوضع افتراضي."
+
+#: core/options.php:710
+msgid "Custom CSS"
+msgstr "CSS المخصص"
+
+#: core/options.php:711
+msgid "Custom CSS for chat widget."
+msgstr "CSS المخصص لعنصر الدردشة."
+
+#: core/options.php:722 core/options.php:761
+msgid "Operators"
+msgstr "المشغلين"
+
+#: core/options.php:727
+msgid "User capabilities"
+msgstr "صلاحيات المستخدم"
+
+#: core/options.php:745
+msgid "Chat button"
+msgstr "زر الدردشة"
+
+#: core/options.php:750
+msgid "Title"
+msgstr "الاسم"
+
+#: core/options.php:783
+msgid "Team intro"
+msgstr "مقدمة الفريق"
+
+#: core/options.php:783
+msgid ""
+"Introduce your team to make the chat box feel more personal for your visitors."
+msgstr "قدّم فريقك لجعل مربع الدردشة يشعر زائريك بمزيد من الخصوصية ."
+
+#: core/options.php:784
+msgid "Online mode"
+msgstr "الوضع المتصل"
+
+#: core/options.php:792
+msgid "Away mode"
+msgstr ""
+
+#: core/options.php:799
+msgid "Statuses"
+msgstr "الحالات"
+
+#: core/options.php:800
+msgid "When operator is online"
+msgstr "عندما يكون المشغل متصل"
+
+#: core/options.php:808
+msgid "When operator is away"
+msgstr "عندما يكون المشغل بعيدا"
+
+#: core/options.php:852
+#, fuzzy
+#| msgid "Write a message"
+msgid "Pre-card message"
+msgstr "اكتب رسالة"
+
+#: core/options.php:859
+#, fuzzy
+#| msgid "Closing message"
+msgid "Post-card message"
+msgstr "رسالة الإغلاق"
+
+#: core/options.php:872
+msgid "Chat popup"
+msgstr "النافذة المنبثقة للدردشة"
+
+#: core/options.php:901
+msgid "Welcome message"
+msgstr "رسالة ترحيب"
+
+#: core/options.php:901
+msgid ""
+"This message is sent for the first conversation of visitors automatically."
+msgstr "يتم إرسال هذه الرسالة للمحادثة الأولى للزائرين تلقائيًا."
+
+#: core/options.php:902 core/options.php:917 core/options.php:925
+#: core/options.php:1114
+msgid "Custom variables"
+msgstr "المتغيرات المخصصة"
+
+#: core/options.php:909 core/templates/admin/console/popup.endChat.php:12
+msgid "Closing message"
+msgstr "رسالة الإغلاق"
+
+#: core/options.php:909
+msgid "Operators might choose to send this message while ending a chat."
+msgstr "قد يختار المشغلون إرسال هذه الرسالة أثناء إنهاء الدردشة."
+
+#: core/options.php:916
+msgid "Response time"
+msgstr "وقت الاستجابة"
+
+#: core/options.php:924
+msgid "Case No."
+msgstr ""
+
+#: core/options.php:932
+msgid "Chat buttons"
+msgstr "أزرار الدردشة"
+
+#: core/options.php:956
+msgid "Chat statuses"
+msgstr "حالات الدردشة"
+
+#: core/options.php:964
+msgid "Chat status messages"
+msgstr "رسائل حالة الدردشة"
+
+#: core/options.php:965
+msgid "Closed chat"
+msgstr "دردشة مغلقة"
+
+#: core/options.php:976
+msgid "Notifications"
+msgstr "التنبيهات"
+
+#: core/options.php:981
+msgid "Window title"
+msgstr "عنوان النافذة"
+
+#: core/options.php:984
+msgid "It appears on visitor's window title when operator replies."
+msgstr "يظهر على عنوان نافذة الزائر عندما يرد المشغل."
+
+#: core/options.php:1017
+msgid "Connection"
+msgstr "اتصال"
+
+#: core/options.php:1045 core/options.php:1125
+msgid "Forms"
+msgstr "نماذج"
+
+#: core/options.php:1080 core/options.php:1204
+msgid "Others"
+msgstr "الآخرين"
+
+#: core/options.php:1093
+msgid "Emails"
+msgstr "البريد الإلكتروني"
+
+#: core/options.php:1098
+msgid "Notify visitor email"
+msgstr "أرسل اشعار للبريد الإلكتروني الزائر."
+
+#: core/options.php:1113
+msgid "Chat logs email"
+msgstr "البريد الالكتروني لسجل الدردشة"
+
+#: core/options.php:1130
+msgid "Name field"
+msgstr "حقل الاسم"
+
+#: core/options.php:1137
+msgid "Email field"
+msgstr "حقل البريد الالكتروني"
+
+#: core/options.php:1144
+msgid "Phone field"
+msgstr "حقل الهاتف"
+
+#: core/options.php:1151
+msgid "Company name field"
+msgstr "حقل اسم الشركة"
+
+#: core/options.php:1158
+msgid "Reply box placeholder"
+msgstr "نص المساعد لمربع الرد"
+
+#: core/options.php:1179
+msgid "Save button"
+msgstr "زر الحفظ"
+
+#: core/options.php:1186
+msgid "Send button"
+msgstr "زر الارسال"
+
+#: core/options.php:1193
+msgid "Start chat button"
+msgstr "زر  بدء الدردشة"
+
+#: core/options.php:1256
+msgid "Date &amp; Time"
+msgstr "التاريخ&amp; الوقت "
+
+#: core/options.php:1261
+msgid "Time ago strings"
+msgstr ""
+
+#: core/options.php:1365
+msgid "Date"
+msgstr "التاريخ"
+
+#: core/options.php:1383
+msgid "Response Time"
+msgstr "وقت الاستجابة"
+
+#: core/options.php:1481
+msgid "Which email do you use to login your Firebase account?"
+msgstr "ما البريد الإلكتروني الذي تستخدمه لتسجيل الدخول إلى حسابك في Firebase؟"
+
+#: core/templates/admin/console/body.php:101
+msgid "I have completed the steps above"
+msgstr "لقد أكملت الخطوات المذكورة أعلاه"
+
+#: core/templates/admin/console/body.php:130
+#: core/templates/admin/console/win.chat.php:74
+msgid "Archive"
+msgstr "الارشيف"
+
+#: core/templates/admin/console/body.php:144
+msgid "Get notified of chat notifications."
+msgstr "الحصول على إشعار من إشعارات الدردشة."
+
+#: core/templates/admin/console/body.php:148
+msgid "Turn on"
+msgstr "شغل"
+
+#: core/templates/admin/console/body.php:172
+msgid "No chats found."
+msgstr "لم يتم العثور على دردشات "
+
+#: core/templates/admin/console/body.php:188
+msgid "No archived chats found."
+msgstr "لم يتم العثور على دردشات مؤرشفة."
+
+#: core/templates/admin/console/body.php:239
+msgid "Undo"
+msgstr "ألغي"
+
+#: core/templates/admin/console/modal.profile.php:11
+msgid "Profile"
+msgstr "الملف الشخصي"
+
+#: core/templates/admin/console/modal.profile.php:50
+msgid ""
+"Only works if any operator doesn't accept new chats automatically at that "
+"moment."
+msgstr ""
+"يعمل فقط إذا كان أي مشغل لا يقبل الدردشات الجديدة تلقائيًا في تلك اللحظة."
+
+#: core/templates/admin/console/modal.profile.php:65
+#: core/templates/admin/console/win.chat.php:122
+msgid "Save"
+msgstr "حفظ"
+
+#: core/templates/admin/console/popup.endChat.php:18
+msgid "Send chat transcript to visitor's email"
+msgstr "إرسال نسخة الدردشة إلى البريد الإلكتروني للزائر"
+
+#: core/templates/admin/console/popup.endChat.php:24
+#: core/templates/admin/console/win.chat.php:89
+msgid "End chat"
+msgstr "انهاء الدردشة"
+
+#: core/templates/admin/console/popup.endChat.php:25
+msgid "End chat without message"
+msgstr "إنهاء الدردشة بدون رسالة"
+
+#: core/templates/admin/console/win.chat.php:24
+msgid "{opName} is talking with this user."
+msgstr "يتحدث{opName} الي هذا المستخدم."
+
+#: core/templates/admin/console/win.chat.php:27
+msgid "Chat has ended."
+msgstr "تم إنهاء الدردشة."
+
+#: core/templates/admin/console/win.chat.php:30
+msgid "Chat has been archived."
+msgstr "تمت أرشفة الدردشة."
+
+#: core/templates/admin/console/win.chat.php:44
+msgid "Write a message"
+msgstr "اكتب رسالة"
+
+#: core/templates/admin/console/win.chat.php:79
+msgid "Delete"
+msgstr "حذف"
+
+#: core/templates/admin/console/win.chat.php:86
+msgid "Join chat"
+msgstr "انضم للدردشة"
+
+#: core/templates/admin/console/win.chat.php:107
+msgid "Feedback"
+msgstr ""
+
+#: core/templates/admin/console/win.chat.php:109
+msgid "No review yet."
+msgstr ""
+
+#: core/templates/admin/console/win.chat.php:110
+msgid "Solved"
+msgstr ""
+
+#: core/templates/admin/console/win.chat.php:111
+msgid "Not solved!"
+msgstr ""
+
+#: core/templates/admin/console/win.chat.php:158
+msgid "Details"
+msgstr "تفاصيل"
+
+#: core/templates/admin/console/win.chat.php:171
+msgid "Hit enter to update"
+msgstr "للتحديث اضغط مفتاح أدخل"
+
+#: core/templates/admin/extensions.php:31
+msgid "Extensions"
+msgstr "إضافات"
+
+#: core/templates/admin/extensions.php:47
+msgid "Deactivate"
+msgstr "تعطيل"
+
+#: core/templates/admin/extensions.php:49
+msgid "Active"
+msgstr "مفعل"
+
+#: core/templates/admin/extensions.php:55
+msgid "No extensions found."
+msgstr "لم يتم العثور علي اضافات"
+
+#: data/countries.php:19
+msgid "Afghanistan"
+msgstr "أفغانستان"
+
+#: data/countries.php:20
+msgid "&#197;land Islands"
+msgstr "جزر أولاند"
+
+#: data/countries.php:21
+msgid "Albania"
+msgstr "ألبانيا"
+
+#: data/countries.php:22
+msgid "Algeria"
+msgstr "الجزائر"
+
+#: data/countries.php:23
+msgid "American Samoa"
+msgstr "ساموا الأمريكية"
+
+#: data/countries.php:24
+msgid "Andorra"
+msgstr "أندورا"
+
+#: data/countries.php:25
+msgid "Angola"
+msgstr "أنغولا"
+
+#: data/countries.php:26
+msgid "Anguilla"
+msgstr "أنغويلا"
+
+#: data/countries.php:27
+msgid "Antarctica"
+msgstr "القارة القطبية الجنوبية"
+
+#: data/countries.php:28
+msgid "Antigua and Barbuda"
+msgstr "أنتيغوا وباربودا"
+
+#: data/countries.php:29
+msgid "Argentina"
+msgstr "الأرجنتين"
+
+#: data/countries.php:30
+msgid "Armenia"
+msgstr "أرمينيا"
+
+#: data/countries.php:31
+msgid "Aruba"
+msgstr "أروبا"
+
+#: data/countries.php:32
+msgid "Australia"
+msgstr "أستراليا"
+
+#: data/countries.php:33
+msgid "Austria"
+msgstr "النمسا"
+
+#: data/countries.php:34
+msgid "Azerbaijan"
+msgstr "أذربيجان"
+
+#: data/countries.php:35
+msgid "Bahamas"
+msgstr "البهاما"
+
+#: data/countries.php:36
+msgid "Bahrain"
+msgstr "البحرين"
+
+#: data/countries.php:37
+msgid "Bangladesh"
+msgstr "بنغلاديش"
+
+#: data/countries.php:38
+msgid "Barbados"
+msgstr "باربادوس"
+
+#: data/countries.php:39
+msgid "Belarus"
+msgstr "بيلاروسيا"
+
+#: data/countries.php:40
+msgid "Belgium"
+msgstr "بلجيكا"
+
+#: data/countries.php:41
+msgid "Belau"
+msgstr "بالاو"
+
+#: data/countries.php:42
+msgid "Belize"
+msgstr "بليز"
+
+#: data/countries.php:43
+msgid "Benin"
+msgstr "بنين"
+
+#: data/countries.php:44
+msgid "Bermuda"
+msgstr "برمودا"
+
+#: data/countries.php:45
+msgid "Bhutan"
+msgstr "بوتان"
+
+#: data/countries.php:46
+msgid "Bolivia"
+msgstr "بوليفيا"
+
+#: data/countries.php:47
+msgid "Bonaire, Saint Eustatius and Saba"
+msgstr "جزر المملكة الهولندية الكاريبية"
+
+#: data/countries.php:48
+msgid "Bosnia and Herzegovina"
+msgstr "البوسنة والهرسك"
+
+#: data/countries.php:49
+msgid "Botswana"
+msgstr "بوتسوانا"
+
+#: data/countries.php:50
+msgid "Bouvet Island"
+msgstr "جزيرة بوفيه"
+
+#: data/countries.php:51
+msgid "Brazil"
+msgstr "البرازيل"
+
+#: data/countries.php:52
+msgid "British Indian Ocean Territory"
+msgstr "إقليم المحيط الهندي البريطاني"
+
+#: data/countries.php:53
+msgid "British Virgin Islands"
+msgstr "الجزر العذراء البريطانية"
+
+#: data/countries.php:54
+msgid "Brunei"
+msgstr "بروناي"
+
+#: data/countries.php:55
+msgid "Bulgaria"
+msgstr "بلغاريا"
+
+#: data/countries.php:56
+msgid "Burkina Faso"
+msgstr "بوركينا فاسو"
+
+#: data/countries.php:57
+msgid "Burundi"
+msgstr "بوروندي"
+
+#: data/countries.php:58
+msgid "Cambodia"
+msgstr "كمبوديا"
+
+#: data/countries.php:59
+msgid "Cameroon"
+msgstr "الكاميرون"
+
+#: data/countries.php:60
+msgid "Canada"
+msgstr "كندا"
+
+#: data/countries.php:61
+msgid "Cape Verde"
+msgstr "الرأس الأخضر"
+
+#: data/countries.php:62
+msgid "Cayman Islands"
+msgstr "جزر كايمان"
+
+#: data/countries.php:63
+msgid "Central African Republic"
+msgstr "جمهورية أفريقيا الوسطى"
+
+#: data/countries.php:64
+msgid "Chad"
+msgstr "تشاد"
+
+#: data/countries.php:65
+msgid "Chile"
+msgstr "تشيلي"
+
+#: data/countries.php:66
+msgid "China"
+msgstr "الصين"
+
+#: data/countries.php:67
+msgid "Christmas Island"
+msgstr "جزيرة كريسماس"
+
+#: data/countries.php:68
+msgid "Cocos (Keeling) Islands"
+msgstr "جزر كوكوس (كيلينغ)"
+
+#: data/countries.php:69
+msgid "Colombia"
+msgstr "كولومبيا"
+
+#: data/countries.php:70
+msgid "Comoros"
+msgstr "جزر القمر"
+
+#: data/countries.php:71
+msgid "Congo (Brazzaville)"
+msgstr "الكونغو (برازافيل)"
+
+#: data/countries.php:72
+msgid "Congo (Kinshasa)"
+msgstr "الكونغو (كينشاسا)"
+
+#: data/countries.php:73
+msgid "Cook Islands"
+msgstr "جزر كوك"
+
+#: data/countries.php:74
+msgid "Costa Rica"
+msgstr "كوستاريكا"
+
+#: data/countries.php:75
+msgid "Croatia"
+msgstr "كرواتيا"
+
+#: data/countries.php:76
+msgid "Cuba"
+msgstr "كوبا"
+
+#: data/countries.php:77
+msgid "Cura&ccedil;ao"
+msgstr "كوراساو"
+
+#: data/countries.php:78
+msgid "Cyprus"
+msgstr "قبرص"
+
+#: data/countries.php:79
+msgid "Czech Republic"
+msgstr "جمهورية التشيك"
+
+#: data/countries.php:80
+msgid "Denmark"
+msgstr "الدنمارك"
+
+#: data/countries.php:81
+msgid "Djibouti"
+msgstr "جيبوتي"
+
+#: data/countries.php:82
+msgid "Dominica"
+msgstr "دومينيكا"
+
+#: data/countries.php:83
+msgid "Dominican Republic"
+msgstr "جمهورية الدومينيكان"
+
+#: data/countries.php:84
+msgid "Ecuador"
+msgstr "الاكوادور"
+
+#: data/countries.php:85
+msgid "Egypt"
+msgstr "مصر"
+
+#: data/countries.php:86
+msgid "El Salvador"
+msgstr "السلفادور"
+
+#: data/countries.php:87
+msgid "Equatorial Guinea"
+msgstr "غينيا الاستوائية"
+
+#: data/countries.php:88
+msgid "Eritrea"
+msgstr "إريتريا"
+
+#: data/countries.php:89
+msgid "Estonia"
+msgstr "استونيا"
+
+#: data/countries.php:90
+msgid "Ethiopia"
+msgstr "أثيوبيا"
+
+#: data/countries.php:91
+msgid "Falkland Islands"
+msgstr "جزر فوكلاند"
+
+#: data/countries.php:92
+msgid "Faroe Islands"
+msgstr "جزر فارو"
+
+#: data/countries.php:93
+msgid "Fiji"
+msgstr "فيجي"
+
+#: data/countries.php:94
+msgid "Finland"
+msgstr "فنلندا"
+
+#: data/countries.php:95
+msgid "France"
+msgstr "فرنسا"
+
+#: data/countries.php:96
+msgid "French Guiana"
+msgstr "جويانا الفرنسية"
+
+#: data/countries.php:97
+msgid "French Polynesia"
+msgstr "بولينيزيا الفرنسية"
+
+#: data/countries.php:98
+msgid "French Southern Territories"
+msgstr "الأقاليم الجنوبية الفرنسية"
+
+#: data/countries.php:99
+msgid "Gabon"
+msgstr "الغابون"
+
+#: data/countries.php:100
+msgid "Gambia"
+msgstr "غامبيا"
+
+#: data/countries.php:101
+msgid "Georgia"
+msgstr "Georgia"
+
+#: data/countries.php:102
+msgid "Germany"
+msgstr "ألمانيا"
+
+#: data/countries.php:103
+msgid "Ghana"
+msgstr "غانا"
+
+#: data/countries.php:104
+msgid "Gibraltar"
+msgstr "جبل طارق"
+
+#: data/countries.php:105
+msgid "Greece"
+msgstr "اليونان"
+
+#: data/countries.php:106
+msgid "Greenland"
+msgstr "جرينلاند"
+
+#: data/countries.php:107
+msgid "Grenada"
+msgstr "غرينادا"
+
+#: data/countries.php:108
+msgid "Guadeloupe"
+msgstr "غوادلوب"
+
+#: data/countries.php:109
+msgid "Guam"
+msgstr "غوام"
+
+#: data/countries.php:110
+msgid "Guatemala"
+msgstr "غواتيمالا"
+
+#: data/countries.php:111
+msgid "Guernsey"
+msgstr "غيرنسي"
+
+#: data/countries.php:112
+msgid "Guinea"
+msgstr "غينيا"
+
+#: data/countries.php:113
+msgid "Guinea-Bissau"
+msgstr "غينيا بيساو"
+
+#: data/countries.php:114
+msgid "Guyana"
+msgstr "غيانا"
+
+#: data/countries.php:115
+msgid "Haiti"
+msgstr "هايتي"
+
+#: data/countries.php:116
+msgid "Heard Island and McDonald Islands"
+msgstr "جزيرة هيرد وجزر ماكدونالد"
+
+#: data/countries.php:117
+msgid "Honduras"
+msgstr "هندوراس"
+
+#: data/countries.php:118
+msgid "Hong Kong"
+msgstr "هونغ كونغ"
+
+#: data/countries.php:119
+msgid "Hungary"
+msgstr "هنغاريا"
+
+#: data/countries.php:120
+msgid "Iceland"
+msgstr "آيسلندا"
+
+#: data/countries.php:121
+msgid "India"
+msgstr "الهند"
+
+#: data/countries.php:122
+msgid "Indonesia"
+msgstr "أندونيسيا"
+
+#: data/countries.php:123
+msgid "Iran"
+msgstr "إيران"
+
+#: data/countries.php:124
+msgid "Iraq"
+msgstr "العراق"
+
+#: data/countries.php:125
+msgid "Republic of Ireland"
+msgstr "جمهورية ايرلندا"
+
+#: data/countries.php:126
+msgid "Isle of Man"
+msgstr "جزيرة مان"
+
+#: data/countries.php:127
+msgid "Israel"
+msgstr "فلسطين المحتلة (إسرائيل)"
+
+#: data/countries.php:128
+msgid "Italy"
+msgstr "إيطاليا"
+
+#: data/countries.php:129
+msgid "Ivory Coast"
+msgstr "ساحل العاج"
+
+#: data/countries.php:130
+msgid "Jamaica"
+msgstr "جامايكا"
+
+#: data/countries.php:131
+msgid "Japan"
+msgstr "اليابان"
+
+#: data/countries.php:132
+msgid "Jersey"
+msgstr "جيرزي"
+
+#: data/countries.php:133
+msgid "Jordan"
+msgstr "الأردن"
+
+#: data/countries.php:134
+msgid "Kazakhstan"
+msgstr "كازاخستان"
+
+#: data/countries.php:135
+msgid "Kenya"
+msgstr "كينيا"
+
+#: data/countries.php:136
+msgid "Kiribati"
+msgstr "كيريباتي"
+
+#: data/countries.php:137
+msgid "Kuwait"
+msgstr "الكويت"
+
+#: data/countries.php:138
+msgid "Kyrgyzstan"
+msgstr "قرغيزستان"
+
+#: data/countries.php:139
+msgid "Laos"
+msgstr "لاوس"
+
+#: data/countries.php:140
+msgid "Latvia"
+msgstr "لاتفيا"
+
+#: data/countries.php:141
+msgid "Lebanon"
+msgstr "لبنان"
+
+#: data/countries.php:142
+msgid "Lesotho"
+msgstr "ليسوتو"
+
+#: data/countries.php:143
+msgid "Liberia"
+msgstr "ليبيريا"
+
+#: data/countries.php:144
+msgid "Libya"
+msgstr "ليبيا"
+
+#: data/countries.php:145
+msgid "Liechtenstein"
+msgstr "ليختنشتاين"
+
+#: data/countries.php:146
+msgid "Lithuania"
+msgstr "ليتوانيا"
+
+#: data/countries.php:147
+msgid "Luxembourg"
+msgstr "لوكسمبورغ"
+
+#: data/countries.php:148
+msgid "Macao S.A.R., China"
+msgstr "ماكاو، الصين"
+
+#: data/countries.php:149
+msgid "Macedonia"
+msgstr "مقدونيا"
+
+#: data/countries.php:150
+msgid "Madagascar"
+msgstr "مدغشقر"
+
+#: data/countries.php:151
+msgid "Malawi"
+msgstr "ملاوي"
+
+#: data/countries.php:152
+msgid "Malaysia"
+msgstr "ماليزيا"
+
+#: data/countries.php:153
+msgid "Maldives"
+msgstr "جزر المالديف"
+
+#: data/countries.php:154
+msgid "Mali"
+msgstr "مالي"
+
+#: data/countries.php:155
+msgid "Malta"
+msgstr "مالطا"
+
+#: data/countries.php:156
+msgid "Marshall Islands"
+msgstr "جزر مارشال"
+
+#: data/countries.php:157
+msgid "Martinique"
+msgstr "مارتينيك"
+
+#: data/countries.php:158
+msgid "Mauritania"
+msgstr "موريتانيا"
+
+#: data/countries.php:159
+msgid "Mauritius"
+msgstr "موريشيوس"
+
+#: data/countries.php:160
+msgid "Mayotte"
+msgstr "مايوت"
+
+#: data/countries.php:161
+msgid "Mexico"
+msgstr "المكسيك"
+
+#: data/countries.php:162
+msgid "Micronesia"
+msgstr "ميكرونيزيا"
+
+#: data/countries.php:163
+msgid "Moldova"
+msgstr "مولدوفا"
+
+#: data/countries.php:164
+msgid "Monaco"
+msgstr "موناكو"
+
+#: data/countries.php:165
+msgid "Mongolia"
+msgstr "منغوليا"
+
+#: data/countries.php:166
+msgid "Montenegro"
+msgstr "الجبل الأسود"
+
+#: data/countries.php:167
+msgid "Montserrat"
+msgstr "مونتسيرات"
+
+#: data/countries.php:168
+msgid "Morocco"
+msgstr "المغرب"
+
+#: data/countries.php:169
+msgid "Mozambique"
+msgstr "موزمبيق"
+
+#: data/countries.php:170
+msgid "Myanmar"
+msgstr "ميانمار"
+
+#: data/countries.php:171
+msgid "Namibia"
+msgstr "ناميبيا"
+
+#: data/countries.php:172
+msgid "Nauru"
+msgstr "ناورو"
+
+#: data/countries.php:173
+msgid "Nepal"
+msgstr "نيبال"
+
+#: data/countries.php:174
+msgid "Netherlands"
+msgstr "هولندا"
+
+#: data/countries.php:175
+msgid "New Caledonia"
+msgstr "كاليدونيا الجديدة"
+
+#: data/countries.php:176
+msgid "New Zealand"
+msgstr "نيوزيلندا"
+
+#: data/countries.php:177
+msgid "Nicaragua"
+msgstr "نيكاراغوا"
+
+#: data/countries.php:178
+msgid "Niger"
+msgstr "النيجر"
+
+#: data/countries.php:179
+msgid "Nigeria"
+msgstr "نيجيريا"
+
+#: data/countries.php:180
+msgid "Niue"
+msgstr "نيوي"
+
+#: data/countries.php:181
+msgid "Norfolk Island"
+msgstr "جزيرة نورفولك"
+
+#: data/countries.php:182
+msgid "Northern Mariana Islands"
+msgstr "جزر ماريانا الشمالية"
+
+#: data/countries.php:183
+msgid "North Korea"
+msgstr "كوريا الشمالية"
+
+#: data/countries.php:184
+msgid "Norway"
+msgstr "النرويج"
+
+#: data/countries.php:185
+msgid "Oman"
+msgstr "عمان"
+
+#: data/countries.php:186
+msgid "Pakistan"
+msgstr "باكستان"
+
+#: data/countries.php:187
+msgid "Palestinian Territory"
+msgstr "الأراضي الفلسطينية"
+
+#: data/countries.php:188
+msgid "Panama"
+msgstr "بناما"
+
+#: data/countries.php:189
+msgid "Papua New Guinea"
+msgstr "بابوا غينيا الجديدة"
+
+#: data/countries.php:190
+msgid "Paraguay"
+msgstr "باراغواي"
+
+#: data/countries.php:191
+msgid "Peru"
+msgstr "بيرو"
+
+#: data/countries.php:192
+msgid "Philippines"
+msgstr "الفلبين"
+
+#: data/countries.php:193
+msgid "Pitcairn"
+msgstr "بيتكيرن"
+
+#: data/countries.php:194
+msgid "Poland"
+msgstr "بولندا"
+
+#: data/countries.php:195
+msgid "Portugal"
+msgstr "البرتغال"
+
+#: data/countries.php:196
+msgid "Puerto Rico"
+msgstr "بورتوريكو"
+
+#: data/countries.php:197
+msgid "Qatar"
+msgstr "قطر"
+
+#: data/countries.php:198
+msgid "Reunion"
+msgstr "ريونيون"
+
+#: data/countries.php:199
+msgid "Romania"
+msgstr "رومانيا"
+
+#: data/countries.php:200
+msgid "Russia"
+msgstr "روسيا"
+
+#: data/countries.php:201
+msgid "Rwanda"
+msgstr "رواندا"
+
+#: data/countries.php:202
+msgid "Saint Barth&eacute;lemy"
+msgstr "سانت بارتيليمي"
+
+#: data/countries.php:203
+msgid "Saint Helena"
+msgstr "سانت هيلينا"
+
+#: data/countries.php:204
+msgid "Saint Kitts and Nevis"
+msgstr "سانت كيتس ونيفيس"
+
+#: data/countries.php:205
+msgid "Saint Lucia"
+msgstr "سانت لوسيا"
+
+#: data/countries.php:206
+msgid "Saint Martin (French part)"
+msgstr "سانت مارتن (الجزء الفرنسي)"
+
+#: data/countries.php:207
+msgid "Saint Martin (Dutch part)"
+msgstr "سانت مارتن (الجزءالهولندي)"
+
+#: data/countries.php:208
+msgid "Saint Pierre and Miquelon"
+msgstr "سان بيار وميكلون"
+
+#: data/countries.php:209
+msgid "Saint Vincent and the Grenadines"
+msgstr "سانت فنسنت وجزر غرينادين"
+
+#: data/countries.php:210
+msgid "San Marino"
+msgstr "سان مارينو"
+
+#: data/countries.php:211
+msgid "S&atilde;o Tom&eacute; and Pr&iacute;ncipe"
+msgstr "سان تومي وبرينسيبي"
+
+#: data/countries.php:212
+msgid "Saudi Arabia"
+msgstr "المملكة العربية السعودية"
+
+#: data/countries.php:213
+msgid "Senegal"
+msgstr "السنغال"
+
+#: data/countries.php:214
+msgid "Serbia"
+msgstr "صربيا"
+
+#: data/countries.php:215
+msgid "Seychelles"
+msgstr "سيشيل"
+
+#: data/countries.php:216
+msgid "Sierra Leone"
+msgstr "سيراليون"
+
+#: data/countries.php:217
+msgid "Singapore"
+msgstr "سنغافورة"
+
+#: data/countries.php:218
+msgid "Slovakia"
+msgstr "سلوفاكيا"
+
+#: data/countries.php:219
+msgid "Slovenia"
+msgstr "سلوفينيا"
+
+#: data/countries.php:220
+msgid "Solomon Islands"
+msgstr "جزر سليمان"
+
+#: data/countries.php:221
+msgid "Somalia"
+msgstr "الصومال"
+
+#: data/countries.php:222
+msgid "South Africa"
+msgstr "جنوب أفريقيا"
+
+#: data/countries.php:223
+msgid "South Georgia/Sandwich Islands"
+msgstr "جورجيا الجنوبية وجزر ساندويتش"
+
+#: data/countries.php:224
+msgid "South Korea"
+msgstr "كوريا الجنوبية"
+
+#: data/countries.php:225
+msgid "South Sudan"
+msgstr "جنوب السودان"
+
+#: data/countries.php:226
+msgid "Spain"
+msgstr "إسبانيا"
+
+#: data/countries.php:227
+msgid "Sri Lanka"
+msgstr "سريلانكا"
+
+#: data/countries.php:228
+msgid "Sudan"
+msgstr "السودان"
+
+#: data/countries.php:229
+msgid "Suriname"
+msgstr "سورينام"
+
+#: data/countries.php:230
+msgid "Svalbard and Jan Mayen"
+msgstr "سفالبارد"
+
+#: data/countries.php:231
+msgid "Swaziland"
+msgstr "سوازيلاند"
+
+#: data/countries.php:232
+msgid "Sweden"
+msgstr "السويد"
+
+#: data/countries.php:233
+msgid "Switzerland"
+msgstr "سويسرا"
+
+#: data/countries.php:234
+msgid "Syria"
+msgstr "سوريا"
+
+#: data/countries.php:235
+msgid "Taiwan"
+msgstr "تايوان"
+
+#: data/countries.php:236
+msgid "Tajikistan"
+msgstr "طاجيكستان"
+
+#: data/countries.php:237
+msgid "Tanzania"
+msgstr "تنزانيا"
+
+#: data/countries.php:238
+msgid "Thailand"
+msgstr "تايلاند"
+
+#: data/countries.php:239
+msgid "Timor-Leste"
+msgstr "تيمور الشرقية"
+
+#: data/countries.php:240
+msgid "Togo"
+msgstr "توغو"
+
+#: data/countries.php:241
+msgid "Tokelau"
+msgstr "توكيلاو"
+
+#: data/countries.php:242
+msgid "Tonga"
+msgstr "تونغا"
+
+#: data/countries.php:243
+msgid "Trinidad and Tobago"
+msgstr "ترينيداد وتوباغو"
+
+#: data/countries.php:244
+msgid "Tunisia"
+msgstr "نونس"
+
+#: data/countries.php:245
+msgid "Turkey"
+msgstr "تركيا"
+
+#: data/countries.php:246
+msgid "Turkmenistan"
+msgstr "تركمانستان"
+
+#: data/countries.php:247
+msgid "Turks and Caicos Islands"
+msgstr "جزر تركس وكايكوس"
+
+#: data/countries.php:248
+msgid "Tuvalu"
+msgstr "توفالو"
+
+#: data/countries.php:249
+msgid "Uganda"
+msgstr "أوغندا"
+
+#: data/countries.php:250
+msgid "Ukraine"
+msgstr "أوكرانيا"
+
+#: data/countries.php:251
+msgid "United Arab Emirates"
+msgstr "الإمارات العربية المتحدة"
+
+#: data/countries.php:252
+msgid "United Kingdom (UK)"
+msgstr "المملكة المتحدة"
+
+#: data/countries.php:253
+msgid "United States (US)"
+msgstr "الولايات المتحدة الأمريكية"
+
+#: data/countries.php:254
+msgid "United States (US) Minor Outlying Islands"
+msgstr "جزر الولايات المتحدة الصغيرة النائية"
+
+#: data/countries.php:255
+msgid "United States (US) Virgin Islands"
+msgstr "جزر العذراء الأمريكية"
+
+#: data/countries.php:256
+msgid "Uruguay"
+msgstr "أوروغواي"
+
+#: data/countries.php:257
+msgid "Uzbekistan"
+msgstr "أوزبكستان"
+
+#: data/countries.php:258
+msgid "Vanuatu"
+msgstr "فانواتو"
+
+#: data/countries.php:259
+msgid "Vatican"
+msgstr "الفاتيكان"
+
+#: data/countries.php:260
+msgid "Venezuela"
+msgstr "فنزويلا"
+
+#: data/countries.php:261
+msgid "Vietnam"
+msgstr "فيتنام"
+
+#: data/countries.php:262
+msgid "Wallis and Futuna"
+msgstr "واليس وفوتونا"
+
+#: data/countries.php:263
+msgid "Western Sahara"
+msgstr "الصحراء الغربية"
+
+#: data/countries.php:264
+msgid "Samoa"
+msgstr "ساموا"
+
+#: data/countries.php:265
+msgid "Yemen"
+msgstr "اليمن"
+
+#: data/countries.php:266
+msgid "Zambia"
+msgstr "زامبيا"
+
+#: data/countries.php:267
+msgid "Zimbabwe"
+msgstr "زيمبابوي"
+
+#~ msgid "A beautiful, intelligent <strong>chat tool</strong>."
+#~ msgstr "رائعة, ذكية<strong>أداة دردشة</strong>."
+
+#~ msgid "Add to Menu"
+#~ msgstr "اضف الي القائمة"
+
+#~ msgid "https://screets.io"
+#~ msgstr "https://screets.io"
+
+#~ msgid ""
+#~ "If the plugin don't save changes, consider <strong>not to use emojis</"
+#~ "strong> or special characters in your text fields above."
+#~ msgstr ""
+#~ "إذا لم يحفظ المكون الإضافي التغييرات ، ففكر في <strong> عدم استخدام الرموز "
+#~ "التعبيرية </strong> أو الأحرف الخاصة في حقولك النصية أعلاه."
+
+#~ msgid "Support"
+#~ msgstr "دعم"
+
+#~ msgid "We see that you are using old version of PHP"
+#~ msgstr "نرى أنك تستخدم الإصدار القديم من PHP"

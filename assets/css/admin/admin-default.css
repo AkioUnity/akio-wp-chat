@@ -1,0 +1,136 @@
+/* Show/hide controls */
+	.__lcx {
+		display: none !important;
+	}
+	.__lcx.lcx-active {
+		display: block !important;
+	}
+	.__lcxi {
+		display: none !important;
+	}
+	.__lcxi.lcx-active {
+		display: inline-block !important;
+	}
+
+/* General UI */
+	.lcx-req {
+		color: red;
+		font-weight: normal;
+		font-size: 1.1em;
+	}
+
+	.lcx-success {
+		color: #55af4c;
+	}
+
+	.lcx-error {
+		color: #e54045;
+	}
+
+/* Table */
+	.lcx-table {
+		width: 100%;
+	}
+	.lcx-table th {
+		vertical-align: top;
+		padding-top: 4px;
+		padding-right: 10px;
+		padding-bottom: 10px;
+		text-align: left;
+		min-width: 150px;
+	}
+	.lcx-table td {
+		width: 100%;
+		padding-bottom: 10px;
+	}
+	.lcx-table th small,
+	.lcx-table th .description {
+		font-weight: normal;
+	}
+
+	.lcx-table tr p {
+		margin-top: 0;
+		margin-bottom: 5px;
+	}
+
+	.lcx-table .description {
+		color: #999;
+	}
+	.lcx-table input[type="text"],
+	.lcx-table input[type="number"],
+	.lcx-table input[type="email"],
+	.lcx-table textarea,
+	.lcx-table select {
+		border: 1px solid #ddd;
+		padding: 0 8px;
+		border-radius: 4px;
+		box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+		font-size: 14px;
+		height: 32px;
+		line-height: 32px;
+		box-sizing: border-box;
+	}
+	.lcx-table input[type="text"].is-small,
+	.lcx-table input[type="number"].is-small,
+	.lcx-table input[type="email"].is-small,
+	.lcx-table textarea.is-small,
+	.lcx-table select.is-small{
+		width: 80px;
+	}
+	.lcx-table input[type="text"].is-large,
+	.lcx-table input[type="number"].is-large,
+	.lcx-table input[type="email"].is-large,
+	.lcx-table textarea.is-large,
+	.lcx-table select.is-large{
+		width: 90%;
+	}
+
+	.lcx-table textarea {
+		height: 50px;
+		line-height: 1.4em;
+		padding: 6px 8px;
+	}
+
+	.lcx-table ul {
+		margin-top: 0;
+	}
+
+	.lcx-table fieldset {
+		line-height: 1.6em;
+	}
+
+	.misc-pub-visibility {
+		display: none;
+	}
+	#slugdiv {
+		display: none; /* Slugs shouldn't be changed */
+	}
+
+	.lcx-table-h th {
+		min-width: auto;
+	}
+	.lcx-table-h td {
+		width: auto;
+		padding: 0 10px 0 0;
+		vertical-align: top;
+	}
+	.lcx-table-h input[type="text"],
+	.lcx-table-h input[type="number"],
+	.lcx-table-h input[type="email"],
+	.lcx-table-h textarea,
+	.lcx-table-h select {
+		width: 100%;
+	}
+
+	.lcx-table ::-moz-placeholder { color: #999; font-size: 13px; }
+	.lcx-table ::-webkit-input-placeholder { color: #999; font-size: 13px; }
+	.lcx-table :-ms-input-placeholder { color: #999; font-size: 13px; }
+
+/* Info box */
+	.lcx-info {
+		font-size: 14px;
+		background-color: #fff;
+		padding: 15px;
+		line-height: 1.4em;
+		border-radius: 4px;
+	}

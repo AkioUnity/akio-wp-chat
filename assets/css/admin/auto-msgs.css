@@ -1,0 +1,58 @@
+.lcx-new-condition {
+	text-align: right;
+	margin-top: 45px;
+	margin-bottom: 30px;
+	padding: 0 30px;
+}
+
+.lcx-msg {
+	width: 100%;
+}
+
+#lcx_auto_msgs_msg_meta_box .inside {
+	padding: 0;
+}
+/* Forms */
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+textarea,
+select {
+	display: inline-block;
+	width: 25em;
+	max-width: 100%;
+	border-radius: 4px;
+	padding: 5px 8px;
+    margin: 0 0 5px 0;
+}
+
+input[type="text"].lcx-error,
+input[type="number"].lcx-error,
+input[type="email"].lcx-error,
+input[type="url"].lcx-error,
+input[type="password"].lcx-error,
+textarea.lcx-error,
+select.lcx-error {
+	border-color: #e54045;
+	background-color: rgba(229,64,69,0.02);
+}
+
+input[type="number"] {
+    width: 10em;
+}
+
+.form-table ::-webkit-input-placeholder { color: #bbb; }
+.form-table ::-moz-placeholder { color: #bbb; }
+.form-table :-ms-input-placeholder { color: #bbb; }
+.form-table :-moz-placeholder { color: #bbb; }
+
+.form-table .radio-label {
+    display: block;
+    
+}
+
+
+
+

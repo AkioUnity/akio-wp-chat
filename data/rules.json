@@ -1,0 +1,28 @@
+{
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null",
+    
+    "operators": {
+      ".read": true,
+      ".write": "auth.isOperator === true",
+      ".indexOn": [
+        "lastOnline"
+      ]
+    },
+    "onlineOps": {
+      ".read": true,
+      ".write": "auth.isOperator === true"
+    },
+    "chats": {
+      ".indexOn": [
+        "archived"
+      ]
+    },
+    "users": {
+      ".indexOn": [
+        "lastSeen"
+      ]
+    }
+  }
+}

@@ -1,0 +1,152 @@
+// Colors
+$primary: #ea3c3b !default;
+$secondary: #7e8bfe !default;
+$tertiary: #ff80a7 !default;
+$white: #ffffff !default;
+$black: #434a4c !default;
+$lightGray: #c0c5c7 !default;
+$lighterGray: #dadcde !default;
+$darkGray: #8d93ab !default;
+$darkerGray: #63727f !default;
+
+$bubbleBgYou: #c8efff !default;
+
+// Status colors
+$dangerColor: #fc5151 !default;
+$successColor: #3aac5e !default;
+
+// Border colors
+$borderColor: #dce0e6 !default;
+$borderColorLighter: #e7ecf3 !default;
+$borderColorDarker: #b8beca !default;
+
+// Background colors
+$bgColor: $white !default;
+$lightBg: #edf2f5 !default;
+$lighterBg: #fafbfc !default;
+$darkBg: #40434a !default;
+$darkerBg: #24262b !default;
+$primaryBg: $darkBg !default;
+$linearBg: linear-gradient( 130deg, $tertiary, darken( $tertiary, 10% ), #9ADCEA, darken( #9ADCEA, 10% ) ) !default;
+
+// Other colors
+$highlightColor: #ffed85 !default;
+$glowColor: #00b8ff !default;
+
+// Layout
+$smallerObjH: 20px !default;
+$smallObjH: 25px !default;
+$standartObjH: 35px !default;
+$largeObjH: 40px !default;
+$largerObjH: 60px !default;
+$replyH: 45px !default;
+$replyHmax: 150px !default;
+$smallGap: 5px !default;
+
+// Defaults
+$position: 'bottom-right' !default;
+$offset: 30px !default;
+$offsetX: 30px !default;
+$offsetY: 30px !default;
+$radius: 4px !default;
+$radiusSmall: abs( round( $radius/2 ) ) !default;
+$radiusBig: 8px !default;
+$starterSize: 60px !default;
+$popupW: 370px !default;
+$popupH: 590px !default;
+$popupMinH: 250px !default;
+
+$popupBottomOffset: $offset/2 + $starterSize !default;
+
+$avatarW: 30px !default;
+$avatarBigW: 50px !default;
+
+// Grid
+$gridGutters: $smallGap*2 !default;
+
+// Icons
+$starterIconW: 35px !default;
+$starterIconWSmall: 20px !default;
+$starterIconOffset: 5px !default;
+$menuIconW: 22px !default;
+$btnIconW: 22px !default;
+
+// Branding
+$logoWidth: 50px !default;
+$logoHeight: 50px !default;
+$logoRadius: $radiusSmall !default;
+$footerLogoWidth: 30px !default;
+$footerLogoHeight: 30px !default;
+$footerLogoRadius: $radiusSmall !default;
+
+// Fonts
+$fontfamily: -apple-system, BlinkMacSystemFont,"Helvetica Neue", Arial, sans-serif !default;
+$fontfamily2: -apple-system, BlinkMacSystemFont, sans-serif !default;
+$fontfamilyDefault: -apple-system, BlinkMacSystemFont, sans-serif !default;
+
+// Typography effects
+$weightLight: 300 !default;
+$weightRegular: 400 !default;
+$weightMedium: 600 !default;
+$weightBold: 700 !default;
+$lineHeight: 1.35em !default;
+$lineHeightNarrow: 1.25em !default;
+$lineHeightWider: 1.45em !default;
+$letterSpacing: 0.025em !default;
+$letterSpacingWide: 0.1em !default;
+$letterSpacingWider: 0.23em !default;
+
+// Forms
+$inputHeight: $standartObjH !default;
+$textareaHeight: $largeObjH * 2 !default;
+
+// Image effects
+$imgSize: 200px !default;
+$imgSizeSmall: 120px !default;
+$imgSizeLarge: 250px !default;
+
+// Icon sizes
+$icon: 50px !default;
+$iconSmall: 15px !default;
+$iconMedium: 100px !default;
+$iconBig: 160px !default;
+$iconBigger: 220px !default;
+
+// Effects
+$shadow: 0 5px 20px 0 rgba( $darkGray, .35 ) !default;
+$shadowBtn: inset 0 3px 15px rgba( $white, .2 ), 0 5px 13px 0 rgba($black,.12) !default;
+$shadowSmall: 0 5px 13px 0 rgba($black,.12) !default;
+$shadowBig: 0 15px 50px -5px rgba($darkGray, .1), 0 15px 40px -10px rgba($darkGray, .07), 0 0 5px rgba($darkGray,.05) !default;
+$shadowBigStronger: 0 0 30px -5px rgba($darkGray, .3), 0 15px 25px -20px rgba($darkGray, .4), 0 0 5px -1px rgba($darkGray, .2) !default;
+$popupShadow: $shadowBigStronger;
+$popupShadowOffset: 20px;
+
+// Animation
+$animSpeed: 300ms !default;
+$animSpeedSlow: 700ms !default;
+$animSpeedFast: 300ms !default;
+$animSpeedFaster: 150ms !default;
+
+// Typography
+$size: 15px !default;
+$size4XSmall: 0.7em !default;
+$size3XSmall: 0.75em !default;
+$size2XSmall: 0.8em !default;
+$sizeXSmall: 0.9em !default;
+$sizeSmall: 0.95em !default;
+$sizeMedium: 1.05em !default;
+$sizeLarge: 1.1em !default;
+$sizeXLarge: 1.2em !default;
+$size2XLarge: 1.45em !default;
+$size3XLarge: 1.5em !default;
+$size4XLarge: 1.7em !default;
+$size5XLarge: 2em !default;
+
+$h2: 1.9em !default;
+$h3: 2.8em !default;
+$h4: 2.3em !default;
+$h5: 2em !default;
+
+
+
+$assetsURL: '' !default;

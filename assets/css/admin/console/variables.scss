@@ -1,0 +1,154 @@
+ // Colors
+$primary: #f45037 !default;
+$secondary: #7e8bfe !default;
+$tertiary: #91a1f5 !default;
+$white: #fff !default;
+$black: #282b36 !default;
+
+// Status colors
+$dangerColor: #fb6445 !default;
+$warnColor: #fff8a4 !default;
+$successColor: #2de7c7 !default;
+
+// Border colors
+$borderColor: #d7dde1 !default;
+$borderColorLighter: lighten( $borderColor, 5% ) !default;
+$borderColorDarker: darken( $borderColor, 5% ) !default;
+
+// Bubble colors
+$bubbleBg: #acfad1 !default;
+
+// Background colors
+$mainBg: linear-gradient( 130deg, #FFC4D6, darken( #FFC4D6, 10% ), #9ADCEA, darken( #9ADCEA, 10% ) ) !default;
+$lightBg: #f0f3f4 !default;
+$lighterBg: #f9fafa !default;
+$darkBg: #2b2f3a !default;
+$darkerBg: #24282e !default;
+
+// Soft colors
+$lightGray: #9a9a9a !default;
+$lighterGray: #c7c7c7 !default;
+$darkGray: lighten( $darkBg, 30% ) !default;
+$darkerGray: lighten( $darkBg, 15% ) !default;
+
+// Other colors
+$highlightColor: #fff8a4 !default;
+$glowColor: #00b8ff !default;
+
+// Fonts
+$fontfamily: -apple-system, BlinkMacSystemFont,"Helvetica Neue", Arial, sans-serif !default;
+$fontfamily2: -apple-system, BlinkMacSystemFont, sans-serif !default;
+$fontfamilyDefault: -apple-system, BlinkMacSystemFont, sans-serif !default;
+
+// Typography effects
+$weightLight: 300 !default;
+$weightRegular: 400 !default;
+$weightMedium: 500 !default;
+$weightBold: 600 !default;
+$weightBolder: 700 !default;
+$lineHeight: 21px !default; // Should be pixel for reference.
+$lineHeightNarrow: 1.25em !default;
+$lineHeightWider: 1.35em !default;
+$letterSpacing: 0.025rem !default;
+$letterSpacingWider: 1.5px !default;
+
+// Avatar
+$avatar: 30px !default;
+$smallAvatar: 20px !default;
+
+// Effects
+$shadow: 0 4px 16px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.1) !default;
+$shadowLight: 0 4px 16px rgba(50,50,93,.08), 0 1px 3px rgba(0,0,0,.08) !default;
+$shadowLighter: 0 4px 16px rgba(50,50,93,.05), 0 1px 3px rgba(0,0,0,.05) !default;
+$shadowBig: 0 0 25px -5px rgba($darkGray, .13), 0 3px 5px rgba($secondary,.12) !default;
+$shadowBigStronger: 0 15px 45px -5px rgba(39, 55, 74, .3), 0 15px 30px -20px rgba(39, 55, 74, .2) !default;
+$inputShadow: inset 0 1px 5px rgba( $black, .07 );
+
+// Animation
+$animSpeed: 300ms !default;
+$animSpeedSlow: 700ms !default;
+$animSpeedSlower: 1200ms !default;
+
+// Typography
+$size: 15px !default; // Should be pixel for reference.
+$size2XSmall: 0.7em !default;
+$sizeXSmall: 0.8em !default;
+$sizeSmall: 0.9em !default;
+$sizeMedium: 1.1em !default;
+$sizeLarge: 1.2em !default;
+$sizeXLarge: 1.3em !default;
+$size2XLarge: 1.4em !default;
+$size3XLarge: 1.6em !default;
+
+// Layout effects
+$offset: 30px !default;
+$smallGap: 5px !default;
+$radius: 5px !default;
+$radiusSmall: 3px !default;
+$radiusBig: 10px !default;
+$standartObjH: 35px !default;
+$smallObjH: 25px !default;
+$smallerObjH: 22px !default;
+$mediumObjH: 30px !default;
+$bigObjH: 40px !default;
+
+// Object sizes
+$headerHeight: $bigObjH !default;
+$footerHeight: 30px !default;
+$replyMinHeight: 75px !default;
+$replyMaxHeight: 300px !default;
+$acceptSwitcherWidth: 40px !default;
+$windowHeaderHeight: 40px !default;
+$sideFooterHeight: 41px !default;
+
+// Icons
+$iconSize: 18px !default;
+$iconSizeSmall: 14px !default;
+$iconSizeBig: 75px !default;
+
+// Breakpoints
+$mobileBreakpoint: 783px !default;
+$tabletBreakpoint: 1000px !default;
+$bigScreenBreakpoint: 1200px !default;
+$wpMobileBreakpoint: 960px !default;
+
+// WP Layout
+$wpadminbarHeight: 32px !default;
+$wpadminmenu: 160px !default;
+$wpadminmenufolded: 36px !default;
+
+
+
+
+/** 
+ * Make compatible with CSS framework.
+ */
+
+// Typography
+$font-size: $size;
+
+// Colors
+$primary-color: $primary;
+
+// Gray colors
+$dark-color: $black;
+$light-color: $white;
+$gray-color: $lightGray;
+$gray-color-dark: $darkGray;
+$gray-color-light: $lighterGray;
+
+$success-color: $successColor;
+$warning-color: $warnColor;
+$error-color: $dangerColor;
+
+$bg-light: $lightBg;
+$bg-lighter: $lighterBg;
+$bg-gray: $lightBg;
+$bg-dark: $darkBg;
+$bg-darker: $darkerBg;
+
+
+// Effects
+$border-radius: $radius;
+$border-radius-small: $radiusSmall;
+$border-radius-big: $radiusBig;

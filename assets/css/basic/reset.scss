@@ -1,0 +1,254 @@
+/**
+ * Sass Super Reset
+ * Based on Eric Meyer's CSS Reset
+ */
+
+@mixin noop() {
+	@content;
+}
+
+@include noop {
+	$root: ".lcx";
+
+	@if (&) {
+	} @else {
+		$root: ".lcx";
+	}
+	
+	// This contains default values for child elements to inherit 
+	#{$root} {
+		font-size: medium;
+		line-height: 1;
+		direction:ltr;
+		text-align: left; // for IE, Opera
+		text-align: start; // recommended W3C Spec
+		font-family: $fontfamily; // Override this with whatever font-family is required
+		color: black;
+		font-style: normal;
+		font-weight: normal;
+		text-decoration: none;
+		list-style-type: disc;
+	}
+
+	// Base property resets
+   .lcx {
+		margin: 0;
+		padding: 0;
+
+		div, span, applet, object, iframe,
+		button, input, select, textarea,
+		h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+		a, abbr, acronym, address, big, cite, code,
+		del, dfn, em, img, ins, kbd, q, s, samp,
+		small, strike, strong, sub, sup, tt, var,
+		b, u, i, center,
+		dl, dt, dd, ol, ul, li,
+		fieldset, form, label, legend,
+		table, caption, tbody, tfoot, thead, tr, th, td,
+		canvas, details, embed, figure,
+		time, mark, audio, video {
+			background-position: 0 0;
+			background-repeat: repeat;
+			border-color: black;
+			border-color: currentColor; // `border-color` should match font color. 
+										// Modern browsers (incl. IE9) allow the use of "currentColor" 
+										// to match the current font 'color' value 
+										// <http://www.w3.org/TR/css3-color/#currentcolor>. 
+										// For older browsers, a default of 'black' is given before this rule. 
+										// Guideline to support older browsers: if you haven't already declared 
+										// a border-color for an element, be sure to do so, e.g. when you first declare 
+										// the border-width.
+			border-radius: 0;
+			border-style: none;
+			border-width: medium;
+			bottom: auto;
+			clear: none;
+			clip: auto;
+			color: inherit;
+			counter-increment: none;
+			counter-reset: none;
+			direction: inherit;
+			display: inline;
+			float: none;
+			font-family: inherit; // As with other inherit values, this needs to be set on the root container element
+			font-size: inherit;
+			font-style: inherit;
+			font-variant: normal;
+			font-weight: inherit;
+			height: auto;
+			left: auto;
+			letter-spacing: normal;
+			line-height: inherit;
+			list-style-type: inherit; // Could set list-style-type to none
+			list-style-position: outside;
+			list-style-image: none;
+			margin: 0;
+			max-height:none;
+			max-width:none;
+			min-height:0;
+			min-width:0;
+			opacity:1;
+			outline:invert none medium;
+			overflow: visible;
+			overflow-style: auto;
+			padding:0;
+			position:static;
+			quotes: "" "";
+			right:auto;
+			table-layout:auto;
+			text-align:inherit;
+			text-decoration:inherit;
+			text-indent:0;
+			text-transform:none;
+			top:auto;
+			unicode-bidi:normal;
+			vertical-align:baseline;
+			visibility:inherit;
+			white-space:normal;
+			width:auto;
+			word-spacing:normal;
+			z-index:auto;
+
+			// CSS3
+			// Including all prefixes according to http://caniuse.com/
+			// CSS Animations don't cascade, so don't require resetting
+			-webkit-background-origin: padding-box;
+				background-origin: padding-box;
+			-webkit-background-clip: border-box;
+				background-clip: border-box;
+			-webkit-background-size: auto;
+			-moz-background-size: auto;
+				background-size: auto;
+			-webkit-border-image: none;
+			-moz-border-image: none;
+			 -o-border-image: none;
+				border-image: none;
+			-webkit-border-radius:0;
+			-moz-border-radius:0;
+				border-radius: 0;
+			-webkit-box-shadow: none;
+				box-shadow: none;
+			-webkit-box-sizing: content-box;
+			-moz-box-sizing: content-box;
+				box-sizing: content-box;
+			-webkit-column-count: auto;
+			-moz-column-count: auto;
+				column-count: auto;
+			-webkit-column-gap: normal;
+			-moz-column-gap: normal;
+				column-gap: normal;
+			-webkit-column-rule: medium none black;
+			-moz-column-rule: medium none black;
+				column-rule: medium none black;
+			-webkit-column-span: 1;
+			-moz-column-span: 1; // doesn't exist yet but probably will
+				column-span: 1;
+			-webkit-column-width: auto;
+			-moz-column-width: auto;
+				column-width: auto;
+			font-feature-settings: normal;
+			overflow-x: visible;
+			overflow-y: visible;
+			-webkit-hyphens: manual;
+			-moz-hyphens: manual;
+				hyphens: manual;
+			-webkit-perspective: none;
+			-moz-perspective: none;
+			-ms-perspective: none;
+			 -o-perspective: none;
+				perspective: none;
+			-webkit-perspective-origin: 50% 50%;
+			-moz-perspective-origin: 50% 50%;
+			-ms-perspective-origin: 50% 50%;
+			 -o-perspective-origin: 50% 50%;
+				perspective-origin: 50% 50%;
+			-webkit-backface-visibility: visible;
+			-moz-backface-visibility: visible;
+			-ms-backface-visibility: visible;
+			 -o-backface-visibility: visible;
+				backface-visibility: visible;
+			text-shadow: none;
+			-webkit-transition: all 0s ease 0s;
+				transition: all 0s ease 0s;
+			-webkit-transform: none;
+			-moz-transform: none;
+			-ms-transform: none;
+			 -o-transform: none;
+				transform: none;
+			-webkit-transform-origin: 50% 50%;
+			-moz-transform-origin: 50% 50%;
+			-ms-transform-origin: 50% 50%;
+			 -o-transform-origin: 50% 50%;
+				transform-origin: 50% 50%;
+			-webkit-transform-style: flat;
+			-moz-transform-style: flat;
+			-ms-transform-style: flat;
+			 -o-transform-style: flat;
+				transform-style: flat;
+			word-break: normal;
+		}
+
+		// Block-level elements
+		h1, h2, h3, h4, h5, h6, ol, p, ul, dd, fieldset, form, option, pre, div, hr, caption,
+		audio, video, address, blockquote, colgroup, progress, summary {
+			display:block;
+		}
+		h1, h2, h3, h4, h5, h6, strong {
+			font-weight: $weightBold;
+		}
+		em {
+			font-style: italic;
+		}
+		p {
+			line-height: $lineHeight;
+		}
+		s,
+		del {
+			text-decoration: line-through;
+		}
+		mark {
+			display: inline-block;
+			background-color: $highlightColor;
+			border-radius: $radiusSmall;
+			padding: 0 2px;
+		}
+
+		// Table
+		table {
+			display: table;
+			border-collapse: collapse;
+		}
+		thead {
+			display: table-header-group;
+		}
+		tbody {
+			display: table-row-group;
+		}
+		tfoot {
+			display: table-footer-group;
+		}
+		tr {
+			display: table-row;
+		}
+		th, td {
+			display: table-cell;
+			padding: 2px;
+		}
+		
+		// Click-able elements
+		a, a *, input[type=submit], input[type=button], input[type=radio], input[type=checkbox], select, button {
+			cursor: pointer;
+		}
+
+		// Other elements
+		blockquote, q {
+			quotes: none; // HTML5
+		}
+		blockquote:before, blockquote:after, q:before, q:after, li:before, li:after  {
+			content: "";
+		}
+		img, figure {
+			border: 0;
+		}
+	}
+}

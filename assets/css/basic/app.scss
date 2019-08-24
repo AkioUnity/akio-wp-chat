@@ -1,0 +1,1313 @@
+/**
+ * SCREETS © 2018
+ *
+ * SCREETS, d.o.o. Sarajevo. All rights reserved.
+ * This  is  commercial  software,  only  users  who have purchased a valid
+ * license  and  accept  to the terms of the  License Agreement can install
+ * and use this program.
+ *
+ * @package LiveChatX
+ *
+ */
+
+@import "variables.scss";
+@import "../mixins.scss";
+@import "reset.scss";
+@import "grid.scss";
+
+.lcx {
+	color: $black;
+	font-weight: $weightRegular;
+
+	* {
+		box-sizing: border-box !important;
+	}
+
+	a {
+		display: inline-block;
+		transition: all $animSpeed;
+	}
+
+	p {
+		margin-bottom: $offset;
+	}
+
+	b, strong {
+		font-weight: $weightBold;
+	}
+
+	i {
+		font-style: italic;
+	}
+	small {
+		font-size: $sizeXSmall;
+	}
+
+	.lcx-loader {
+		text-align: center;
+		animation: $animSpeed lcx_blink cubic-bezier(0.2, 0, 1, 1) infinite alternate;
+	}
+
+	/**
+	 * Starter.
+	 */
+	.lcx-starter {
+		position: fixed;
+		width: $starterSize;
+		
+		@if $position == 'bottom-right' {
+			bottom: $popupShadowOffset;
+			right: $popupShadowOffset;
+		} @else if $position == 'bottom-left' {
+			bottom: $popupShadowOffset;
+			left: $popupShadowOffset;
+		}
+
+		color: fn_idealText( $primary );
+		background-color: $primary;
+		padding: 0 $offset/2 2px $offset/2;
+		transition: all $animSpeedFast;
+		font-size: $size;
+		box-shadow: $shadow;
+		height: $starterSize;
+		border-radius: 50%;
+		z-index: 999990;
+		cursor: pointer;
+
+		&:hover {
+			background-color: lighten( $primary, 5%);
+		}
+		
+		svg {
+			fill: fn_idealText( $primary );
+		}
+	}
+	.lcx-starter-default,
+	.lcx-starter-minimized {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+
+		width: $starterIconW;
+		height: $starterIconW;
+	
+		svg {
+			width: $starterIconW;
+			height: $starterIconW;
+		}
+	}
+	.lcx-starter-default {
+		animation: $animSpeedFast lcx_rotatein;
+	}
+	.lcx-starter-minimized {
+		width: $starterIconWSmall;
+		height: $starterIconWSmall;
+
+		svg {
+			width: $starterIconWSmall;
+			height: $starterIconWSmall;
+		}
+	}
+	.lcx-starter-body {
+		display: inline-block;
+		width: 100%;
+		padding-left: $starterIconWSmall + $smallGap;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	&.lcx--open {
+		.lcx-starter {
+			width: $starterSize;
+		}
+		.lcx-starter-default {
+			opacity: 0;
+			animation: $animSpeedFast lcx_rotateout;
+		}
+		.lcx-starter-minimized {
+			display: block;
+			animation: $animSpeedFast lcx_rotatein;
+		}
+		.lcx-popup {
+			display: flex;
+		}
+	}
+
+	/**
+	 * Popup.
+	 */
+	.lcx-popup {
+		position: fixed;
+		display: flex;
+		flex-direction: column;
+
+		@if $position == 'bottom-right' {
+			bottom: $popupBottomOffset + $offset/2;
+			right: $popupShadowOffset;
+		} @else if $position == 'bottom-left' {
+			bottom: $popupBottomOffset + $offset/2;
+			left: $popupShadowOffset;
+		}
+
+		width: $popupW;
+		height: $popupH;
+		min-height: $popupMinH;
+		max-height: calc( 100vh - #{$popupBottomOffset + $offset/2} );
+		background-color: $white;
+		background-size: 50%;
+		border-radius: $radiusBig;
+		box-shadow: $popupShadow;
+		line-height: $lineHeight;
+		z-index: 999900;
+		cursor: default;
+
+		&.lcx--active {
+			animation: $animSpeedFast lcx_fadeinup;
+		}
+	}
+	.lcx-popup-header,
+	.lcx-popup-footer {
+		flex: 0 0 auto;
+		transition: height $animSpeed;
+		z-index: 99;
+	}
+	.lcx-popup-body {
+		flex: 1 1 auto;
+		overflow-x: hidden;
+		overflow-y: auto;
+		background-size: 50%;
+	}
+
+	.lcx-popup-header-wrap {
+		position: relative;
+		color: fn_idealText( $primary );
+		background-color: $primary;
+		border-radius: $radiusBig $radiusBig 0 0;
+		padding: $offset/2 $offset;
+		line-height: $lineHeightNarrow;
+		min-height: $menuIconW + $smallGap*4;
+		box-shadow: $shadowBtn;
+
+		.lcx-desc {
+			width: 95%;
+			line-height: $lineHeightNarrow;
+			margin: $offset/2 auto 0 auto;
+		}
+
+		.lcx-subtitle {
+			color: rgba( $white, .8 );
+			font-size: $size2XSmall;
+			font-family: $fontfamily2;
+		}
+
+		.lcx-footer {
+			font-size: $size2XSmall;
+			font-family: $fontfamily2;
+		}
+
+		.lcx-menu {
+			position: absolute;
+			top: $offset/2 - $smallGap /*Icon space diff.*/;
+			left: $offset/2 - $smallGap;
+			border-radius: $radius;
+			padding: 0 $smallGap;
+			line-height: 0.9;
+			color: fn_idealText( $primary );
+			fill: fn_idealText( $primary );
+			z-index: 99;
+
+			&:hover {
+				background-color: rgba( $white, .15 );
+			}
+			svg {
+				width: $menuIconW;
+				height: $menuIconW;
+			}
+
+			.lcx-count {
+				position: absolute;
+				top: 3px;
+				left: ($offset/2 - $smallGap) + $menuIconW;
+				border-radius: 50%;
+				color: $secondary;
+				background-color: fn_idealText( $primary );
+				padding: 0 $smallGap;
+				width: 20px;
+				height: 20px;
+				line-height: 20px;
+				font-size: $sizeXSmall;
+				font-weight: $weightBold;
+				text-align: center;
+				animation: $animSpeed lcx_fadeinup;
+			}
+		}
+	}
+
+	/**
+	 * Custom popups.
+	 */
+	.lcx-popup {
+
+		// 
+		// Conversations popups.
+		// 
+		&[data-name="cnv"] {
+
+			background-image: none !important;
+
+			// Hide menu in conversations popup
+			.lcx-menu {
+				display: none;
+			}
+
+			.lcx-popup-footer {
+				text-align: center;
+				padding: $offset/2;
+			}
+		}
+
+		//
+		// Online popups.
+		//
+		&[data-name="online"] {
+			
+			.lcx-ops {
+				margin-top: $offset/2;
+			}
+			.lcx-op-item {
+				display: inline-block;
+				margin: 0 $smallGap;
+				width: $avatarBigW + $smallGap*2;
+			}
+
+			.lcx-op-pic {
+				img {
+					width: $avatarBigW;
+					height: $avatarBigW;
+					border-radius: 50%;
+					border: 1px solid rgba( $white, .4 );
+				}
+			}
+			.lcx-op-name {
+				display: block;
+				font-size: $size3XSmall;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+			.lcx-op-desc {
+				color: rgba( $white, .6 );
+				font-size: $size3XSmall;
+				line-height: $lineHeightNarrow;
+			}
+
+			.lcx-op-info {
+				margin-left: $offset/2;
+
+				.lcx-op-name {
+					font-size: $size;
+				}
+			}
+			.lcx-op-content {
+				line-height: $lineHeightNarrow;
+				padding-left: $offset/2;
+			}
+		}
+	}
+
+	.lcx-rtime {
+		margin-top: $smallGap;
+		border-radius: $radius;
+		font-size: $sizeSmall;
+		color: rgba( $white, .6 );
+	}
+	.lcx-popup-footer-closed {
+		padding: $offset/2;
+		background-color: $lighterBg;
+		border-top: 1px solid $borderColorLighter;
+	}
+	a.lcx-btn-chat-not-solved {
+		svg {
+			margin-bottom: 0;
+			margin-left: 2px;
+		}
+	}
+	.lcx-popup-header {
+		.lcx-btn-end-chat {
+			position: absolute;
+			top: $smallGap*2;
+			right: $offset/2;
+			z-index: 999;
+		}
+		.lcx-btn-close {
+			display: none;
+			position: absolute;
+			top: 0;
+			right: $offset/2;
+			z-index: 999;
+			color: fn_idealText( $primary );
+			fill: fn_idealText( $primary );
+
+			svg {
+				width: 45px;
+				height: 45px;
+			}
+		}
+	}
+
+	/**
+	 * Chat message.
+	 */
+	.lcx-msgs {
+		margin: #{$offset - $smallGap*2} $offset $offset $offset;
+	}
+	.lcx-msg-item {
+		margin-right: 10%;
+		line-height: $lineHeightNarrow;
+		padding-top: $smallGap*2;
+
+		&.lcx--form {
+			.lcx-msg-container {
+				padding: 0;
+				background-color: transparent;
+			}
+		}
+		&.lcx--you {
+			margin-right: 0;
+			margin-left: 15%;
+
+			.lcx-msg-avatar {
+				display: none;
+			}
+			
+			.lcx-msg-container {
+				margin-right: auto;
+				margin-left: 15%;
+				text-align: right;
+			}
+			.lcx-msg-wrap {
+				color: fn_idealText( $bubbleBgYou );
+				background: linear-gradient( 180deg, lighten( $bubbleBgYou, 2% ), $bubbleBgYou 50% );
+				background-color: $bubbleBgYou;
+				text-align: left;
+			}
+			.lcx-msg-meta {
+				text-align: right;
+				padding-right: $smallGap;
+				margin-left: 0;
+			}
+		}
+		&.lcx--new,
+		.lcx--new {
+			animation: $animSpeedFast lcx_fadeinup;
+		}
+	}
+	.lcx-msg-avatar {
+		> img {
+			width: $avatarW;
+			height: $avatarW;
+			border-radius: 50%;
+		}
+		padding-right: $smallGap*2;
+	}
+
+	.lcx-msg-name {
+		font-size: $size2XSmall;
+	}
+	.lcx-msg-wrap {
+		position: relative;
+		display: inline-block;
+		margin-top: $smallGap;
+		background: linear-gradient( 180deg, lighten( $lightBg, 2% ), $lightBg 50% );
+		background-color: $lightBg;
+		padding: $smallGap*2 $offset/2;
+		border-radius: $radiusBig;
+
+		&:hover {
+			.lcx-msg-date {
+				animation: $animSpeedSlow lcx_tooltip;
+  				animation-fill-mode: forwards;
+			}
+		}
+	}
+	.lcx-msg--collector {
+		padding: 0;
+		background: none;
+		border-radius: 0;
+	}
+
+	.lcx-msg-content {
+		font-size: $sizeXSmall;
+
+		@include msg;
+	}
+	.lcx-msg-date {
+		position: absolute;
+		right: $smallGap;
+		top: -$smallGap*2;
+		color: fn_idealText( $darkBg );
+		background-color: rgba( $darkBg, .83 );
+		font-size: $size4XSmall;
+		animation: $animSpeed lcx_fadein;
+		padding: 0 $smallGap;
+		border-radius: $radiusSmall;
+		height: $smallGap*4;
+		line-height: $smallGap*4;
+		visibility: hidden;
+		white-space: nowrap;
+	}
+	.lcx-msg-block {
+		margin-top: $offset/2;
+	}
+	.lcx-msg-meta {
+		font-size: $size3XSmall;
+		color: $lightGray;
+		padding-left: $avatarW + $smallGap*2;
+	}
+
+	.lcx-breakpoint {
+		position: relative;
+		text-align: center;
+		margin: $offset 0 $offset/2 0;
+
+		span {
+			display: inline-block;
+			color: $darkGray;
+			background-color: $lightBg;
+			font-size: $size2XSmall;
+			padding: 3px $smallGap*2;
+			border-radius: $radiusSmall;
+			letter-spacing: $letterSpacing;
+			line-height: 1;
+		}
+
+		&:before {
+			position: absolute;
+			top: 50%;
+			left: 0;
+			width: 100%;
+			border-top: 1px solid $borderColorLighter;
+			content: " ";
+			z-index: -1;
+		}
+	}
+	.lcx-msg--typing {
+		/* position: relative;
+		background-color: $lightBg;
+		border-radius: $radiusBig;
+		padding: $smallGap $offset/2; */
+
+		.lcx-msg-wrap {
+			padding: $offset/2;
+		}
+
+		span {
+			display: block;
+			height: $smallGap;
+			width: $smallGap;
+			float: left;
+			margin: 0 1px;
+			background-color: $darkGray;
+			border-radius: 50%;
+			opacity: 0.4;
+
+			@for $i from 1 through 3 {
+				&:nth-of-type(#{$i}) {
+					animation: 1s lcx_blink2 infinite ($i * .3333s);
+				}
+			}
+		}
+	}
+
+	@keyframes lcx_blink2 {
+		50% {
+			opacity: 1;
+		}
+	}
+
+	// vertically center demo 
+	html {
+		display: table;
+		height: 100%;
+		width: 100%;
+	}
+
+	body {
+		display: table-cell;
+		vertical-align: middle;
+	}
+
+	/**
+	 * Reply box.
+	 */
+	.lcx-reply {
+		width: 100%;
+		min-height: $replyH;
+		max-height: $replyHmax;
+		resize: none;
+		font-size: 16px;
+		line-height: $lineHeightWider;
+		padding: $smallGap*2 $offset/2;
+		border-radius: 0 0 $radiusBig $radiusBig;
+		background-color: $lightBg;
+		overflow-x: hidden;
+		overflow-y: auto;
+		outline: none;
+		transition: background-color $animSpeed, box-shadow $animSpeed;
+		cursor: text;
+
+		@include msg;
+
+		&:empty::before {
+			position: relative;
+			color: rgba( $darkGray, 0.4 );
+			content: attr(data-placeholder);
+			font-size: $size;
+			pointer-events: none;
+			left: 0;
+			right: 0;
+		}
+
+		&:focus:not(.lcx--freeze) {
+			background-color: $white;
+			box-shadow: 0 0 50px 0 rgba( $black,.1 );
+		}
+	}
+
+	/**
+	 * Button.
+	 */
+	.lcx-btn {
+		position: relative;
+		display: inline-block;
+		color: fn_idealText( $secondary );
+		fill: fn_idealText( $secondary );
+		background-color: $secondary;
+		font-family: $fontfamily2;
+		font-size: $sizeSmall;
+		padding: 0 $offset/2;
+		min-width: $btnIconW + $offset;
+		height: $standartObjH;
+		line-height: $standartObjH - 2;
+		border-radius: $radius;
+		box-shadow: $shadowBtn;
+		text-align: center;
+
+		svg {
+			position: absolute;
+			top: 6px;
+			left: $offset/2;
+			width: $btnIconW;
+			height: $btnIconW;
+		}
+
+		&:hover {
+			color: fn_idealText( $secondary );
+			fill: fn_idealText( $secondary );
+			background-color: lighten( $secondary, 5% );
+		}
+
+		&[disabled],
+		&.lcx-disabled {
+			color: $lightGray;
+			background-color: $lightBg;
+			border-color: $borderColor;
+			box-shadow: none;
+			pointer-events: none;
+		}
+	}
+	.lcx-btn--light {
+		color: fn_idealText( $lighterBg );
+		background-color: $lighterBg;
+
+		&:hover {
+			background-color: $lightBg;
+		}
+	}
+	.lcx-btn--lined {
+		color: $secondary;
+		background-color: $white;
+		border: 1px solid lighten( $secondary, 5% );
+		box-shadow: none;
+
+		&.lcx-btn--success {
+			color: $successColor;
+			fill: $successColor;
+			border-color: $successColor;
+
+			&:hover {
+				color: lighten( $successColor, 7% );
+				fill: lighten( $successColor, 7% );
+				border-color: lighten( $successColor, 7% );
+				background-color: $white;
+			}
+		}
+
+		&.lcx-btn--danger {
+			color: $dangerColor;
+			fill: $dangerColor;
+			border-color: $dangerColor;
+
+			&:hover {
+				color: lighten( $dangerColor, 7% );
+				fill: lighten( $dangerColor, 7% );
+				border-color: lighten( $dangerColor, 7% );
+				background-color: $white;
+			}
+		}
+
+		&.lcx-btn--primary-inv {
+			color: fn_idealText( $primary );
+			fill: fn_idealText( $primary );
+			border-color: fn_idealText( $primary );
+			background-color: transparent;
+
+			&:hover {
+				color: rgba( fn_idealText( $primary ), .5 );
+				fill: rgba( fn_idealText( $primary ), .5 );
+				border-color: rgba( fn_idealText( $primary ), .5 );
+				background-color: transparent;
+			}
+		} 
+	}
+	.lcx-btn--sm {
+		height: $smallObjH;
+		line-height: $smallObjH - 2;
+		min-width: $btnIconW + $smallGap*4;
+		padding: 0 $smallGap*2;
+		font-size: $sizeXSmall;
+
+		svg {
+			top: 4px;
+			left: 10px;
+			width: 17px;
+			height: 17px;
+		}
+
+		&.lcx-btn--ico {
+			padding-left: 30px;
+
+			
+		}
+	}
+	.lcx-btn--xs {
+		height: $smallerObjH;
+		line-height: $smallerObjH - 2;
+		min-width: $btnIconW + $smallGap;
+		padding: 0 $smallGap*2;
+		font-size: $size3XSmall;
+	}
+	.lcx-btn--narrow {
+		padding: 0 $offset/2;
+		min-width: $btnIconW + $offset/2;
+	}
+	.lcx-btn-group {
+		.lcx-btn {
+			margin-bottom: $smallGap;
+		}
+	}
+
+	/**
+	 * Rating.
+	 */
+	/* .lcx-rating {
+		border: none;
+		float: left;
+
+		> {
+			input {
+				display: none;
+			}
+			label:before {
+				margin: 0 3px;
+				font-size: 1.2em;
+				font-family: FontAwesome;
+				display: inline-block;
+				content: "\f005";
+			}
+			.lcx-half:before {
+				content: "\f089";
+				position: absolute;
+			}
+			label {
+				color: $lightGray;
+				float: right;
+				cursor: pointer;
+			}
+			input:checked ~ label {
+				color: $highlightColor;
+			}
+		}
+		&:not(:checked) > label:hover {
+			color: $highlightColor;
+			~ label {
+				color: $highlightColor;
+			}
+		}
+		> {
+			input:checked {
+				+ label:hover, ~ label:hover {
+					color: darken( $highlightColor, 2% );
+				}
+			}
+			label:hover ~ input:checked ~ label, input:checked ~ label:hover ~ label {
+				color: darken( $highlightColor, 2% );
+			}
+		}
+	} */
+
+
+	
+
+	/**
+	 * Conversations.
+	 */
+	.lcx-cnv {
+		padding: $offset/2;
+		border-bottom: 1px solid $borderColorLighter;
+		background-color: $white;
+
+		&:hover {
+			background-color: $lighterBg;
+		}
+	}
+	.lcx-cnv-avatar {
+		> img {
+			width: $avatarW;
+			height: $avatarW;
+			border-radius: 50%;
+		}
+	}
+	.lcx-cnv-content {
+		padding-left: $offset/2;
+	}
+	.lcx-cnv-title {
+		font-size: $sizeXSmall;
+	}
+	.lcx-cnv-meta {
+		font-size: $size2XSmall;
+		font-family: $fontfamily2;
+		color: $lightGray;
+
+		> span:not(:last-child):after {
+			content: '\2022';
+			padding: 0 5px 0 8px;
+			color: $lighterGray;
+		}
+	}
+	.lcx-cnv-time,
+	.lcx-cnv-caseNo {
+		color: $lighterGray;
+	}
+
+	.lcx-cnv-caseNo {
+		&:before {
+			content: "#";
+		}
+	}
+
+	/**
+	 * Modes & statuses.
+	 */
+	.lcx-onOnline,
+	.lcx-onAway {
+		display: none;
+	}
+	.lcx-ops {
+		font-family: $fontfamily2;
+	}
+	&[data-mode="online"] {
+		.lcx-onOnline { display: block; }
+
+		.lcx-ops {
+			.lcx-op-pic {
+				position: relative;
+
+				&::before {
+					top: 2px;
+    				right: 8px;
+
+					@include onlineMark;
+				}
+			}
+		}
+	}
+	&[data-mode="away"] {
+		.lcx-onAway { display: block; }
+	}
+
+	&[data-connected] {
+		.lcx-onDisconnect { display: none; }
+	}
+	&:not([data-connected]) {
+		.lcx-onConnect { display: none; }
+	}
+	&:not([data-has-cnv]) {
+		.lcx--noItem {
+			display: block;
+		}
+		.lcx-popup[data-name="cnv"] {
+			.lcx-popup-body:not(.lcx-loader) {
+				text-align: center;
+				color: $darkGray;
+				display: flex;
+		        justify-content: center;
+		        flex-direction: column;
+			}
+		}
+	}
+
+	/**
+	 * Chat statuses.
+	 */
+	.lcx-onNewChat,
+	.lcx-onInitChat,
+	.lcx-onOpenChat,
+	.lcx-onCloseChat {
+		display: none;
+	}
+	&[data-chat-status="new"] {
+		.lcx-onNewChat {
+			display: block;
+		}
+	}
+	&[data-chat-status="init"] {
+		.lcx-onInitChat {
+			display: block;
+		}
+	}
+	&[data-chat-status="open"] {
+		.lcx-onOpenChat {
+			display: block;
+		}
+	}
+	&[data-chat-status="close"] {
+		.lcx-onCloseChat {
+			display: block;
+		}
+	}
+	&[data-op-status="online"] {
+		.lcx-current-op-pic {
+			position: relative;
+
+			&::before {
+				top: 0;
+				right: $smallGap;
+
+				@include onlineMark;
+			}
+		}
+	}
+
+	/**
+	 * Forms.
+	 */
+	.lcx-form {
+		position: relative;
+		cursor: default;
+	}
+	.lcx-form--collector {
+		border: 1px solid $borderColorLighter;
+		padding: $offset/2;
+		background-color: $white;
+		border-radius: $radius;
+		margin-top: $offset/2;
+	}
+
+	.lcx-form-steps {
+		position: absolute;
+		top: $smallGap;
+		right: $offset/2;
+		font-size: $size2XSmall;
+		color: $darkGray;
+	}
+
+	.lcx-form-field {
+		margin-bottom: $smallGap*2;
+		font-size: $sizeSmall;
+		line-height: $lineHeightNarrow;
+
+		a {
+			color: $secondary;
+		}
+
+	}
+	.lcx-form-field--suffix:not(.lcx-field--success) {
+		.lcx-field {
+			border-radius: $radius 0 0 $radius;
+			border-right: none;
+		}
+		.lcx-btn {
+			border-radius: 0 $radius $radius 0;
+		}
+	}
+	
+	.lcx-gdpr-cb {
+		font-size: $sizeSmall;
+	}
+	.lcx-gdpr-note {
+		color: $lightGray;
+		font-size: $sizeXSmall;
+		margin-top: $offset/2;
+	}
+	.lcx-field-offline-agree {
+		margin-top: $offset/2;
+	}
+
+	.lcx-submit-field {
+		margin-right: $smallGap*2;
+	}
+
+	.lcx-form-desc {
+		margin: $offset/2 0 $offset 0;
+		font-size: $sizeSmall;
+		line-height: $lineHeightNarrow;
+		color: $black;
+
+		.lcx-rtime {
+			font-size: $size2XSmall;
+			color: $lightGray;
+			margin-top: $smallGap*2;
+		}
+	}
+
+	.lcx-label {
+		display: block;
+		margin-bottom: $smallGap;
+		font-size: $size2XSmall;
+		line-height: $lineHeightNarrow;
+		color: $darkerGray;
+	}
+	
+	.lcx-field-wrap { 
+		position: relative;
+	}
+
+	.lcx-valid-field {
+		position: absolute;
+		top: 9px;
+		right: 0;
+		color: $successColor;
+		fill: $successColor;
+
+		svg {
+			width: 15px;
+			height: 15px;
+		}
+	}
+	.lcx-form-intro {
+		color: $darkGray;
+		font-size: $size2XSmall;
+		line-height: $lineHeightNarrow;
+		margin-bottom: $offset/2;
+	}
+	.lcx-offline-form {
+		.lcx-valid-field {
+			display: none;
+		}
+	}
+	
+	/* .lcx-form-field--valid {
+		.lcx-valid {
+			display: block;
+			animation: $animSpeed lcx_fadein;
+		}
+
+		.lcx-field-item.lcx-disabled {
+			height: 25px;
+			line-height: 25px;
+		}
+	}
+ */
+	.lcx-input-text,
+	.lcx-input-email,
+	select.lcx-select,
+	textarea.lcx-textarea {
+		display: block;
+		width: 100%;
+		font-size: 16px;
+		background-color: $lighterBg;
+		border-radius: $radius;
+		font-family: $fontfamily2;
+		border: 1px solid $borderColorLighter;
+		padding: 0 $smallGap*2;
+		outline: none;
+		transition: background-color $animSpeed, border-color $animSpeed;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+
+		&:focus,
+		&:active {
+			background-color: $white;
+			border-color: $borderColorDarker;
+		}
+
+		&:disabled,
+		&.lcx--freeze {
+			border-color: transparent;
+			padding-left: 0;
+			padding-right: 0;
+			background-color: $white;
+		}
+
+		&.lcx-error {
+			border-color: $dangerColor;
+		}
+	}
+
+	.lcx-input-text,
+	.lcx-input-email,
+	select.lcx-select {
+		height: $inputHeight;
+		line-height: $inputHeight;
+	}
+
+	textarea.lcx-textarea {
+		padding-top: $smallGap*2;
+		padding-bottom: $smallGap*2;
+		height: $textareaHeight;
+	}
+
+	.lcx-cb-wrap {
+		cursor: pointer;
+	}
+	.lcx-cb {
+		display: inline-block;
+		position: relative;
+		background-color: $lighterBg;
+		border: 1px solid $borderColorLighter;
+		box-shadow: 0 1px 2px rgba( $black, 0.05 ), inset 0px -15px 10px -12px rgba( $black,0.05 );
+		width: 20px;
+		height: 20px;
+		border-radius: $radius;
+		margin-right: $smallGap;
+		appearance: none;
+		-webkit-appearance: none;
+		outline: none;
+		vertical-align: text-top;
+
+		&:active,
+		&:checked:active {
+			box-shadow: 0 1px 2px rgba( $black, 0.05 ), inset 0px 1px 3px rgba( $black, 0.1 );
+		}
+
+		&:checked {
+			background-color: $lightBg;
+			color: darken( $lightGray, 5% );
+			border: 1px solid $borderColor;
+			box-shadow: 0 1px 2px rgba( $black, 0.05 ), inset 0px -15px 10px -12px rgba( $black, 0.05 ), inset 15px 10px -12px rgba( $black, .1);
+
+			&:after {
+				position: absolute;
+				content: '\2714';
+				color: $lightGray;
+				font-size: 13px;
+				top: 0px;
+				left: 4px;
+			}
+		}
+
+		&.lcx-error {
+			background-color: rgba( $dangerColor, 0.07 );
+			border-color: $dangerColor;
+		}
+	}
+
+	*::-webkit-input-placeholder { /* Chrome */
+		color: $lightGray;
+	}
+	*:-moz-placeholder { /* FF 4-18 */
+		color: $lightGray;
+	}
+	*::-moz-placeholder { /* FF 4-18 */
+		color: $lightGray;
+	}
+	*:-ms-input-placeholder { /* IE 10+ */
+		color: $lightGray;
+	}
+
+	/**
+	 * Notifications.
+	 */
+	.lcx-ntf {
+		text-align: center;
+		font-size: $sizeSmall;
+		line-height: $lineHeightNarrow;
+		color: $darkGray;
+		background-color: $white;
+		padding: $smallGap $offset/2;
+		border-bottom:  1px solid $borderColorLighter;
+		animation: $animSpeedSlow lcx_fadeinup;
+	}
+	.lcx-ntf--error {
+		color: $dangerColor;
+		border-bottom-color: rgba( $dangerColor, 0.2 );
+	} 
+	.lcx-ntf--success {
+		color: $successColor;
+		border-bottom-color: rgba( $successColor, 0.2 );
+	} 
+	.lcx-ntf--blink {
+		animation: none;
+
+		.lcx-ntf-content {
+			animation: $animSpeed lcx_blink cubic-bezier(0.2, 0, 1, 1) infinite alternate;
+		}
+	} 
+
+	/**
+	 * Offline popup.
+	 */
+	.lcx-form--offline {
+		padding: $offset/2 10%;
+		background-color: $white;
+	}
+	.lcx-send--offline {
+		margin: $smallGap $offset $offset/2 $offset;
+	}
+
+
+	/**
+	 * Helpers.
+	 */
+	.__lcx-tpl,
+	.__lcx-hide {
+		display: none;
+	}
+	.__lcx-center { text-align: center; }
+	.__lcx-right { text-align: right; }
+	.__lcx-success { color: $successColor; }
+	.__lcx-danger { color: $dangerColor; }
+
+	.__lcx-fadein { animation: $animSpeed lcx_fadein; }
+	.__lcx-fadeinup { animation: $animSpeed lcx_fadeinup; }
+	.__lcx-truncate {
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	.__lcx-showMobile {
+		display: none;
+	}
+	/* .__lcx-clearfix {
+		&:before,
+		&:after {
+			content: " ";
+			display: table;
+		}
+		&:after {
+			clear: both;
+		}
+	} */
+
+	
+	/**
+	 * Mobile view.
+	 */
+	&.lcx-mobileView {
+		.__lcx-showMobile {
+			display: block;
+		}
+		
+		&.lcx--open {
+			.lcx-starter {
+				display: none;
+			}
+		}
+
+		.lcx-popup {
+			bottom: 0;
+			right: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			max-height: 100%;
+		}
+		.lcx-popup-header-wrap {
+			border-radius: 0;
+		}
+		.lcx-popup-header {
+
+			.lcx-btn-close {
+				display: block;
+			}
+			.lcx-btn-end-chat {
+				right: ($offset/2) + 50;
+			}
+		}
+	
+		.lcx-reply {
+			border-radius: 0;
+		}
+		.lcx-send-btn {
+			display: block;
+			height: $replyH;
+			line-height: $replyH+5;
+			border-radius: 0;
+		}
+	}
+}
+
+/**
+ * Animations.
+ */
+@keyframes lcx_blink {
+	from {
+	opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+@keyframes lcx_fadein {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+@keyframes lcx_tooltip {
+	99% {
+		visibility: hidden;
+	}
+	100% {
+		visibility: visible;
+	}
+}
+@keyframes lcx_fadeinup {
+	from {
+		opacity: 0;
+		transform: translate3d(0, 5%, 0);
+	}
+
+	to {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+@keyframes lcx_rotatein {
+	from {
+		transform: rotate( -30deg ) scale(0.3);
+	}
+	to {
+		transform: rotate( 0deg ) scale(1);
+	}
+}
+
+@keyframes lcx_rotateout {
+	from {
+		transform: rotate( 0deg ) scale(1);
+		opacity: 1;
+	}
+	to {
+		transform: rotate( 30deg ) scale(1.5);
+		opacity: 0;
+	}
+}
+

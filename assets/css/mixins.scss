@@ -1,0 +1,163 @@
+/**
+ * SCREETS © 2018
+ *
+ * SCREETS, d.o.o. Sarajevo. All rights reserved.
+ * This  is  commercial  software,  only  users  who have purchased a valid
+ * license  and  accept  to the terms of the  License Agreement can install
+ * and use this program.
+ *
+ * @package LiveChatX
+ *
+ */
+
+/**
+ * Get text color based on a background color.
+ */
+@function fn_idealText( $color ) {
+  @if( lightness( $color ) > 77 ) {
+    @return $black; // Lighter background, return dark color
+  } @else {
+    @return $white; // Darker background, return light color
+  }
+}
+
+/**
+ * Code tag syntax.
+ */
+@mixin syntax() {
+    width: 100%;
+    font-size: $sizeSmall;
+    color: $black;
+    background-color: $lightBg;
+    line-height: $lineHeightNarrow;
+    border-radius: $radius;
+    padding: $smallGap $smallGap*2;
+    font-weight: $weightMedium;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow: auto;
+    margin: 0;
+    box-sizing: border-box;
+    cursor: text;
+}
+
+/**
+ * List item.
+ */
+@mixin list() {
+    padding-left: 0;
+    line-height: $lineHeight;
+}
+@mixin list-item() {
+    display: block;
+
+    &::before {
+        display: inline-block;
+        white-space: nowrap;
+        width: 1.2em;
+        content: '\2022';
+    }
+
+    &.ql-direction-rtl {
+        padding-right: $offset / 2;
+
+        &::before {
+            margin-left: 0.3em;
+            margin-right: -1.5em;
+        }
+    }
+
+    &:not(.ql-direction-rtl) {
+        padding-left: $offset / 2;
+        
+        &::before {
+            margin-left: -1.5em;
+            margin-right: 0.3em;
+            text-align: right;
+        }
+    }
+
+}
+
+/**
+ * Common message content.
+ */
+@mixin msg {
+    font-family: $fontfamily2;
+    word-break: break-word;
+
+    p {
+        font-family: $fontfamily2;
+        font-size: $size;
+        line-height: $lineHeight;
+        
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    a:not(.lcx-btn) {
+        color: $secondary;
+
+        &:hover {
+            color: lighten( $secondary, 10% );
+        }
+    }
+
+    code {
+        border-radius: $radiusSmall;
+        background-color: $lighterGray;
+    }
+    pre {
+        @include syntax;
+    }
+
+    img:not(.emoji) {
+        width: 50%;
+        min-width: 90px;
+        border-radius: $radius;
+        transition: opacity $animSpeed;
+
+        &:hover {
+            opacity: .9;
+        }
+    }
+
+    ul, p, h3 {
+        margin-bottom: $smallGap*2;
+    }
+
+    h3 {
+        font-size: $sizeLarge;
+        font-weight: $weightBold;
+        line-height: $lineHeightNarrow;
+    }
+    
+    span.ql-size-small {
+        color: $lightGray;
+        font-size: $sizeSmall;
+        line-height: $lineHeightNarrow;
+    }
+
+    iframe {
+        width: 100%;
+        height: auto;
+        max-width: 300px;
+    }
+}
+
+
+/**
+ * Online status mark.
+ */
+@mixin onlineMark {
+    content: " ";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: linear-gradient( 180deg, lighten( $successColor, 5% ), $successColor );
+    background-color: $successColor;
+    border: 1px solid rgba( $white, .3 );
+    z-index: 99;
+}

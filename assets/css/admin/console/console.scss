@@ -1,0 +1,1276 @@
+/*!
+ * SCREETS © 2018
+ *
+ * SCREETS, d.o.o. Sarajevo. All rights reserved.
+ * This  is  commercial  software,  only  users  who have purchased a valid
+ * license  and  accept  to the terms of the  License Agreement can install
+ * and use this program.
+ *
+ * @package LiveChatX
+ */
+
+@import "../../mixins.scss";
+@import "variables.scss";
+@import "editor.scss";
+@import "spectre/spectre";
+@import "spectre/spectre-icons";
+@import "defaults.scss";
+
+a {
+	color: $secondary;
+	word-wrap: break-word;
+	hyphens: none;
+
+	&:focus {
+		box-shadow: none;
+	}
+}
+small {
+	display: inline-block;
+	line-height: $lineHeightNarrow;
+}
+
+/**
+ * Layout 
+ */
+.nbird-main {
+	background-color: $white;
+	margin: $offset/2 $smallGap*3 $offset/2 0;
+	border-radius: $radiusBig;
+	height: calc( 100vh - #{$wpadminbarHeight + $offset} );
+	cursor: default;
+
+	&.disabled {
+		opacity: .5;
+		pointer-events: none;
+	}
+
+	> .navbar {
+		height: $headerHeight;
+		line-height: $headerHeight;
+		background-color: $darkerBg;
+		border-radius: $radiusBig $radiusBig 0 0;
+
+		.logo {
+			width: 30px;
+			border-radius: $radiusSmall;
+		}
+
+		.navbar-section {
+			padding: 0 $offset/2;
+			overflow-x: auto;
+    		white-space: nowrap;
+		}
+		
+		.form-group {
+			margin: 0;
+		}
+		.form-switch {
+			display: block;
+			position: relative;
+			font-size: $size;
+			height: $headerHeight;
+			line-height: $headerHeight - 2;
+			padding: 0 0 0 40px;
+			margin: 0 $offset 0 0;
+
+			.form-icon {
+				position: absolute;
+				top: 9px;
+				left: 0;
+				width: 35px;
+				height: 23px;
+				border-radius: 15px;
+
+				&::before {
+					width: 20px;
+					height: 20px;
+					top: 0;
+				}
+			}
+			.nbird-online-status {
+				display: inline-block;
+				padding-left: 2px;
+
+			}
+		}
+
+
+		.nbird-op-info {
+			position: relative;
+			color: $white;
+			margin-right: $offset;
+			
+			> img {
+				position: absolute;
+				top: $smallAvatar/2;
+				left: 0;
+				width: $smallAvatar;
+				height: $smallAvatar;
+				border-radius: $smallAvatar;
+			}
+		}
+		.nbird-is-content {
+			margin-left: $smallAvatar + $smallGap*2;
+		}
+		.lcx-sitename {
+			display: inline-block;
+			color: $secondary;
+			border-radius: $radiusSmall;
+			line-height: 1;
+			margin-left: $smallGap;
+			padding: $smallGap $smallGap $smallGap+1 $smallGap;
+			text-decoration: none;
+
+			&:hover {
+				color: fn_idealText( $secondary );
+				background-color: $secondary;
+			}
+		}
+		.lcx-sep {
+			color: $darkGray;
+			margin: 0 $smallGap;
+		}
+	}
+	> .main {
+		position: relative;
+		background-color: $darkerBg;
+		background-image: url(../../../img/console/bg-02.jpg);
+		background-position: bottom;
+		background-size: cover;
+		height: calc( 100vh - #{$headerHeight + $wpadminbarHeight + $offset} );
+		border-radius: 0 0 $radiusBig $radiusBig;
+		
+		.side {
+			border-radius: 0 0 0 $radiusBig;
+			overflow-x: hidden;
+			overflow-y: auto;
+			padding-top: 45px;
+		
+			.lcx-btn-group {
+				margin: 0 $offset/2 $smallGap $offset/2;
+			}
+			.lcx-info {
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				width: 16.66666667%;
+				color: $darkGray;
+				font-size: $sizeXSmall;
+				text-align: right;
+				background-color: rgba( $darkerBg, .9 );
+				border-radius: 0 0 0 $radiusBig;
+				padding: 2px $offset/2 3px $offset/2;
+
+				.lcx-logo {
+					position: absolute;
+					top: -10px;
+					left: $offset/2;
+
+					img {
+						width: 30px;
+					}
+				}
+			}
+		}
+
+		.win-0 {
+			background-color: $white;
+			border-right: 1px solid $lightBg;
+			border-radius: $radiusSmall 0 0 0;
+
+			.win-tabs {
+				position: absolute;
+				display: block;
+				min-width: 100%;
+				height: 40px;
+				top: 0;
+				left: 0;
+				margin: 0;
+				border-bottom: 1px solid $borderColorLighter;
+				font-size: $sizeXSmall;
+				background: linear-gradient( 180deg, $white 50%, $lightBg 100% );
+				white-space: nowrap;
+				border-radius: $radiusSmall 0 0 0;
+
+
+				li {
+					display: inline-block;
+					margin: 0;
+
+					a {
+						color: $lightGray;
+						margin: 0;
+						padding: 4px $smallGap*2 3px $smallGap*2;
+
+						&:hover {
+							color: $secondary;
+						}
+
+					}
+
+					&:first-child {
+						a {
+							border-radius: $radiusSmall 0 0 0;
+						}
+					}
+
+					&.active a {
+						font-weight: $weightBold;
+						color: fn_idealText( $secondary );
+						background: linear-gradient( 180deg, lighten( $secondary, 5% ), $secondary 30% );
+						border-bottom-color: darken( $secondary, 5% );
+					}
+					&.is--new > a {
+						color: fn_idealText( $highlightColor );
+						background-color: $highlightColor;
+					}
+
+					&[data-status="init"] {
+						a {
+							position: relative;
+
+							&::after {
+								content: " ";
+								position: absolute;
+								top: 3px;
+								right: 3px;
+								width: 7px;
+								height: 7px;
+								border-radius: 50%;
+								background-color: $darkGray;
+							}
+						}
+						&.active a::after {
+							background-color: $highlightColor;
+						}
+					}
+					&[data-status="close"] {
+						a {
+							color: $lighterGray;
+							font-style: italic;
+							background-color: $lighterBg;
+						}
+						&.active a {
+							color: fn_idealText( $secondary );
+							background-color: $secondary;
+							border-color: $secondary;
+							font-style: normal;
+						}
+					}
+
+					&[data-status="open"] {
+						a {
+							color: $successColor;
+						}
+						&.active a {
+							color: fn_idealText( $secondary );
+							border-color: $successColor;
+						}
+					}
+				}
+			}
+
+			.win-tabs-wrapper {
+				position: relative;
+				overflow-x: auto;
+				overflow-y: hidden;
+				height: 30px;
+				box-shadow: $shadowBig;
+				z-index: 99;
+			}
+
+			.win-container {
+				height: calc( 100vh - #{$headerHeight + $wpadminbarHeight + $offset} );
+				border: none;
+				border-radius: 0;
+			}
+			.win-header {
+				padding: 0;
+				
+
+				.toast {
+					padding: 0 $offset/2;
+					border-radius: 0;
+					border: none;
+					font-size: $sizeSmall;
+					text-align: center;
+
+					&.toast-warning {
+						color: $darkGray;
+						background-color: $highlightColor;
+						border-top: 1px solid darken( $highlightColor, 20% );
+						border-bottom: 1px solid darken( $highlightColor, 20% );
+					}
+				}
+			}
+			.win-header-content {
+				height: $windowHeaderHeight;
+				line-height: $windowHeaderHeight - 5;
+				background: linear-gradient( 0deg, $lightBg, $white );
+				margin-left: 0;
+				margin-right: 0;
+			}
+			.chat-meta {
+				position: relative;
+				padding: $offset/2;
+				box-sizing: border-box;
+				border-radius: $radius;
+				margin-top: $offset/2;
+				box-shadow: $shadowBig;
+			}
+			.chat-action-btns {
+				padding-bottom: $offset/2;
+
+				.menu {
+					padding: $smallGap;
+				}
+			}
+		}
+
+		.win-1 {
+			border-radius: 0 0 $radiusBig 0;
+			background-color: $lighterBg;
+
+			.user-info {
+				padding: $smallGap $offset/2;
+
+				.list {
+					padding: $offset/2;
+					border-radius: $radius;
+					background-color: $white;
+					border: 1px solid $lightBg;
+					margin-top: $smallGap;
+				}
+
+				.nbird-username {
+					font-weight: $weightBolder;
+				}
+			}
+
+			.label {
+				background-color: $lightBg;
+				font-size: 12px;
+				padding: 3px $smallGap;
+
+				.dashicons {
+					vertical-align: text-top;
+					width: 16px;
+					height: 16px;
+					font-size: 16px;
+				}
+			}
+		}
+
+		> .column {
+			overflow-x: hidden;
+			overflow-y: auto;
+			height: calc( 100vh - #{$headerHeight + $wpadminbarHeight + $offset} );
+		}
+
+		&.nbird-section {
+			.wrapper {
+				display: table;
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				border-top: 1px solid $darkBg;
+				box-sizing: border-box;
+				overflow-x: hidden;
+				overflow-y: auto;
+			}
+
+			.content {
+				display: table-cell;
+				height: 100%;
+				padding: $offset;
+
+				&.is-vMiddle {
+					vertical-align: middle;	
+				}
+			}
+
+			.lcx-title {
+				font-size: 3.2rem;
+				line-height: 1.1;
+				font-weight: $weightBold;
+				margin-bottom: $offset/2;
+			}
+			.lcx-title2 {
+				font-size: 2.5rem;
+				line-height: 1.1;
+				font-weight: $weightBold;
+				margin-bottom: $offset/2;
+			}
+			.lcx-subtitle {
+				color: $lighterGray;
+				font-size: $sizeXLarge;
+				margin-bottom: $offset;
+				font-weight: $weightLight;
+			}
+			.lcx-desc {
+				font-size: $sizeLarge;
+				line-height: $lineHeightWider;
+			}
+		}
+		.nbird-welcome-conn {
+			.content {
+				text-align: left;
+				padding: $offset $offset*2;
+				vertical-align: middle;
+			}
+		}
+	}
+}
+
+.nbird-install-section,
+.nbird-welcome-section {
+	color: $white;
+}
+/**
+ * Windows.
+ */
+.window-chat {
+	.win-body {
+		position: relative;
+
+		.columns > .column {
+			position: absolute;
+			top: 0;
+			height: 100%;
+			overflow-x: hidden;
+			overflow-y: auto;
+
+			&:first-child {
+				left: 0;
+				width: 66.66666667%;
+			}
+
+			&:last-child {
+				right: 0;
+				width: 33.33333333%;
+			}
+		}
+	}
+
+	.chat-name {
+		height: 32px;
+		font-weight: $weightBold;
+		margin-top: 3px;
+		white-space: nowrap;
+
+		.icon {
+			top: 7px;
+			opacity: .3;
+		}
+	}
+
+	.list {
+		margin: 0;
+		padding: 0;
+		font-size: $sizeSmall;
+
+		dt {
+			color: $darkerGray;
+			font-weight: $weightBold;
+			line-height: $lineHeightNarrow;
+			margin-bottom: $smallGap;
+
+			&:after {
+				content: ":";
+			}
+		}
+
+		.lcx-desc {
+			font-style: italic;
+			color: $lightGray;
+		}
+
+		dd {
+			line-height: $lineHeightNarrow;
+			margin: 0 0 $offset/2 0;
+			word-wrap: break-word;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			ul,
+			li {
+				margin: 0;
+				list-style: none;
+			}
+
+			li {
+				margin-bottom: $smallGap;
+			}
+		}
+
+		.lcx-item-icon {
+			.dashicons {
+				width: 15px;
+				height: 15px;
+				font-size: 15px;
+			}
+		}
+	}
+	
+	// Chat meta
+	.chat-meta {
+		.input-group-addon,
+		.form-select,
+		.form-input {
+			height: 1.1rem;
+			padding: 0;
+			margin: 0;
+			line-height: 1.1rem;
+			box-shadow: none;
+			border: none;
+		}
+
+		.form-select,
+		.form-input {
+			width: 100%;
+			border-radius: 0;
+			-webkit-appearance: none;
+
+			&:focus {
+				box-shadow: none;
+				background-color: $white;
+			}
+		}
+
+		.form-select {
+			padding-left: $smallGap;
+			border-radius: $radiusSmall;
+		}
+
+		.form-input {
+			background-color: transparent;
+		}
+
+		textarea.form-input {
+			height: 3rem;
+			padding: $smallGap;
+			border-radius: $radiusSmall;
+			background-color: $white;
+		}
+
+		.input-group-addon {
+			padding: 0 $smallGap;
+		}
+
+		.input-group {
+
+			.form-select,
+			.form-input {
+				padding: 0 $smallGap;
+				background-color: $white;
+			}
+		}
+	}
+
+	// Chat tabs
+	.lcx-chat-tab {		
+		&:not( .active ) {
+			display: none;
+		}
+
+	}
+}
+
+/**
+ * Sidebar layout.
+ */
+.side-title {
+	color: $darkerGray;
+	font-size: $sizeXSmall;
+	margin: $offset/2 $offset/2 $smallGap $offset/2;
+	text-transform: uppercase;
+	font-weight: $weightBold;
+}
+
+ul.list-tabs {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 16.66666667%;
+	padding: $offset/2 $offset/2 0 $offset/2;
+	margin: 0;
+	list-style: none;
+	background-color: $darkerBg;
+	z-index: 99;
+	
+	a {
+		display: block;
+		color: $darkerGray;
+		fill: $darkerGray;
+		padding: 2px $smallGap 1px $smallGap;
+		line-height: 1;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
+	svg {
+		width: 18px;
+		height: 18px;
+	}
+
+
+	li {
+		display: inline-block;
+		margin: 0;
+		padding: 0;
+
+		&.active {
+			a {
+				color: fn_idealText( $secondary );
+				fill: fn_idealText( $secondary );
+				background-color: $secondary;
+				border-radius: $radiusSmall;
+				text-decoration: none;
+
+			}
+		}
+
+		&:not(:last-child) {
+			margin-right: $smallGap;
+		}
+	}
+}
+.list-tab-content:not(.active) {
+	display: none;
+}
+
+.side-list {
+	margin: 0 0 $offset 0;
+	list-style-type: none;
+	
+	li {
+		margin: 0;
+
+
+		&._no-item {
+			padding: 0 $offset/2;
+		}
+
+		&[data-status="online"] {
+			.lcx-item-link {
+				color: $white;
+
+				&::before {
+					position: absolute;
+					top: 0;
+					left: 1px;
+					content: "";
+					width: 5px;
+					height: 100%;
+					border-radius: 2px;
+					background-color: $successColor;
+				}
+			}
+		}
+		&[data-status="offline"] {
+			.lcx-item-link {
+				color: $lightGray;
+			}
+		}
+
+		&[data-chat-status="new"] {
+			a.lcx-item-link {
+				position: relative;
+
+				&::after {
+					content: " ";
+					position: absolute;
+					top: $smallGap;
+					left: $smallGap;
+					width: 7px;
+					height: 7px;
+					border-radius: 50%;
+					background-color: $highlightColor;
+				}
+			}
+		}
+
+		&.is--new {
+			a.lcx-item-link {
+				color: fn_idealText( $highlightColor );
+				background-color: $highlightColor;
+			}
+		}
+
+		.lcx-prefix {
+			display: inline-block;
+			float: left;
+		}
+		.lcx-prefix-item {
+			margin-right: $smallGap;
+		}
+
+		.lcx-timeago {
+			position: absolute;
+			top: 5px;
+			right: $smallGap*2;
+			font-size: 11px;
+			color: $lighterGray;
+			font-style: normal;
+		}
+	}
+	.lcx-item-link {
+		position: relative;
+		display: block;
+		color: $secondary;
+		padding: $smallGap $offset/2;
+		text-decoration: none;
+		font-size: $sizeSmall;
+
+		&:hover {
+			background-color: $darkBg;
+		}
+
+		&.active {
+			font-weight: $weightBold;
+			background-color: lighten( $darkBg, 5% );
+		}
+		
+		.text-ellipsis {
+			display: block;
+		}
+		.lcx-name {
+			display: block;
+			padding-right: $smallGap*2;
+		}
+		.lcx-msg {
+			font-size: $sizeSmall;
+			color: $lightGray;
+
+			.btn {
+				font-size: 12px;
+				padding: 0 $smallGap;
+				height: 18px;
+				line-height: 15px;
+				margin-right: $smallGap;
+			}
+		}
+		.lcx-caseNo {
+			&:before {
+				content: "#";
+			}
+		}
+
+	}
+}
+
+/**
+ * Sign-in button.
+ */
+.nbird-signin {
+	&:after {
+		margin-left: $smallGap;
+	}
+	&[data-status="signedin"] {
+		&:after {
+			content: attr(data-signout);
+		}
+	}
+	&[data-status="signedout"] {
+		&:after {
+			content: attr(data-signin);
+		}
+	}
+}
+
+/**
+ * Messages.
+ */
+.lcx-msgs {
+	padding: 0 $offset/2;
+	margin: $offset 0;
+
+	> li {
+		position: relative;
+		display: block;
+		margin: 0;
+		padding: 0;
+		margin-bottom: $offset;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		&.lcx-is-new {
+			animation: lcx_fadein $animSpeed;
+		}
+		
+		ul {
+			@include list;
+		}
+		li {
+			@include list-item;
+		}
+
+		.ql-align-right {
+			text-align: right;
+		}
+		.ql-direction-rtl {
+			direction: rtl;
+		}
+		
+		.lcx-avatar {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: $smallAvatar;
+			height: $smallAvatar;
+
+			img {
+				width: $smallAvatar;
+				height: $smallAvatar;
+				border-radius: $smallAvatar;
+			}
+		}
+		&.lcx-msg--avatarText {
+			.lcx-avatar {
+				display: inline-block;
+				font-size: 11px;
+				width: $smallAvatar;
+				height: $smallAvatar;
+				line-height: $smallAvatar;
+				border-radius: $smallAvatar;
+				text-align: center;
+				text-transform: uppercase;
+			}
+		}
+	}
+	.lcx-content {
+		margin-left: $smallAvatar + $smallGap*2;
+	}
+	.lcx-author {
+		display: block;
+		font-size: $sizeXSmall;
+		margin-bottom: $smallGap;
+		line-height: 1;
+
+		.lcx-title {
+			font-weight: $weightBold;
+			margin-right: $smallGap;
+		}
+		.lcx-desc {
+			color: $lighterGray;
+			font-style: italic;
+		}
+	}
+	.lcx-meta {
+		position: absolute;
+		top: 0;
+		right: 0;
+		font-size: $sizeSmall;
+		color: rgba( $black, .3 );
+		line-height: 1;
+	}
+	.lcx-time {
+		display: inline-block;
+		margin-left: $smallGap;
+	}
+	.lcx-msg {
+		@include msg;
+	}
+
+	.lcx-breakpoint {
+		position: relative;
+		color: $gray-color;
+		font-size: $size;
+		font-weight: $weightBold;
+		margin-bottom: $offset;
+		text-align: center;
+		line-height: 1;
+
+		.lcx-legend {
+			position: absolute;
+			top: -5px;
+			left: 0;
+			right: 0;
+			width: 125px;
+			margin: 0 auto;
+			background-color: $white;
+			border-radius: $radiusSmall;
+		}
+		.lcx-bg {
+			display: block;
+			border-bottom: 1px solid $lightBg;
+			height: 1px;
+		}
+	}
+}
+
+/**
+ * Other window elements.
+ */
+.panel {
+	.panel-footer {
+		padding: 0;
+	}
+}
+.nbird-reply {
+	position: relative;
+	height: 70px;
+	width: 100%;
+	border-top: 1px solid $borderColor;
+	border-radius: 0;
+	box-sizing: border-box;
+	padding: $smallGap*2 $offset/2;
+
+	@include msg;
+
+	&:empty::before {
+		position: absolute;
+		color: rgba( $darkGray, 0.4 );
+		content: attr(placeholder);
+		font-style: italic;
+		pointer-events: none;
+		left: $offset/2;
+		right: $offset/2;
+	}
+
+	&.disabled {
+		opacity: .5;
+		pointer-events: none;
+		cursor: default;
+	}
+}
+.editable {
+	position: relative;
+	display: inline-block;
+	box-sizing: border-box;
+	min-width: 60px;
+	line-height: 1;
+	cursor: text;
+
+	[contenteditable] {
+		display: block;
+		outline: none;
+		border: 1px dashed $borderColorDarker;
+		padding: $smallGap 30px $smallGap 5px;
+		border-radius: $radiusSmall;
+		box-shadow: $inputShadow;
+
+		&:hover {
+			background-color: $white;
+		}
+
+		&:focus,
+		&:active {
+			border-style: solid;
+		}
+	}
+
+	.icon {
+		position: absolute;
+		top: $smallGap;
+		right: $smallGap;
+		pointer-events: none;
+	}
+}
+
+.trumbowyg-box {
+	min-height: $replyMinHeight;
+	max-height: $replyMaxHeight;
+	border: none;
+	margin: 0;
+
+	.nbird-reply {
+		min-height: $replyMinHeight;
+		max-height: $replyMaxHeight;
+		border: none;
+	}
+}
+.trumbowyg-button-pane {
+	border: none;
+	background: $lighterBg;
+	min-height: $smallObjH;
+	line-height: $smallObjH;
+
+	button {
+		width: $smallObjH;
+		height: $smallObjH;
+	}
+}
+.trumbowyg-button-pane .trumbowyg-button-group+.trumbowyg-button-group::before {
+	height: $smallObjH;
+}
+
+/**
+ * Manage layout by statuses.
+ */
+body {
+	
+	// Prepare background
+	#wpwrap {
+		background: $mainBg;
+		background-size: 400% 400%;
+		transition: background-position $animSpeedSlower;
+		background-position: 0% 50%;
+	}
+
+	&[data-online="true"] #wpwrap {
+		background-position: 100% 50%;
+
+		.nbird-online-status:after {
+			color: $successColor;
+			content: attr(data-online);
+		}
+
+		input:checked+.form-icon {
+			background: $successColor;
+			border-color: $successColor;
+		}
+	}
+
+	&[data-conn-status] .nbird-welcome-loader {
+		display: none;
+	}
+	&[data-conn-status="connect"]:not([data-auth-state="signedin"]):not([data-auth-state="setup"]) .nbird-welcome-conn {
+		display: block !important;
+		margin: 0 $offset*2;
+	}
+
+	&[data-nbird-wait="1"] {
+		.nbird-wait-section {
+			display: flex !important;
+			text-align: center;
+			padding: $offset;
+		}
+
+		.nbird-signin,
+		.nbird-welcome-section,
+		.nbird-install-section {
+			display: none !important;
+		}
+	}
+	&[data-auth-state="setup"] {
+		.nbird-install-section {
+			display: flex !important;
+		}
+		.nbird-signin,
+		.nbird-welcome-section {
+			display: none !important;
+		}
+	}
+
+	&[data-auth-state="signedin"] {
+		.nbird-chat-section {
+			display: flex !important;
+		}
+		.nbird-welcome-section {
+			display: none !important;
+		}
+	}
+
+	.nbird-online-status:after {
+		content: attr(data-offline);
+	}
+
+
+}
+
+/**
+ * Icons.
+ */
+.icon.dashicons {
+	text-indent: 0;
+}
+
+/**
+ * Utilities.
+ */
+.gap {
+	display: block;
+	height: 15px;
+}
+.gap-lg {
+	height: $smallObjH;
+}
+
+/**
+ * Buttons.
+ */
+.btn {
+	position: relative;
+	border-color: $borderColorLighter;
+
+	svg {
+		display: inline-block;
+		margin-top: 4px;
+		width: 14px;
+		height: 14px;
+	}
+
+	&.btn-sm {
+		padding: 0 $smallGap*2;
+		height: $smallObjH;
+		line-height: $smallObjH - 3;
+		font-size: $sizeSmall;
+	}
+
+	&.btn-xs {
+		padding: 0 $smallGap;
+		height: 20px;
+		line-height: 18px;
+		font-size: $sizeXSmall;
+	}
+
+	&.btn-has-icon {
+		padding-left: .5em;
+	}
+
+	&.btn-link {
+		&:hover {
+			color: lighten( $primary, 5% );
+		}
+	}
+	
+	&.has-icon {
+		padding-left: $avatar + $smallGap*2;
+
+		img {
+			position: absolute;
+			width: $avatar;
+			height: $avatar;
+			top: 3px;
+			left: $smallGap;
+		}
+	}
+}
+.btn:not(.btn-link) {
+	&.btn-narrow {
+		padding-left: $smallGap*2;
+		padding-right: $smallGap*2;
+	}
+}
+
+.btn-primary {
+	fill: $white;
+	box-shadow: inset 0 3px 10px rgba( $white, .2 ), 0 5px 8px 0 rgba($black,.12);
+}
+
+/**
+ * Colors.
+ */
+.text-gray-light {
+	color: $lightGray;
+}
+.text-gray-lighter {
+	color: $lighterGray;
+}
+.text-gray-dark {
+	color: $darkGray;
+}
+
+/**
+ * Handle notifications.
+ */
+.nbird-ntfs {
+	position: absolute;
+	top: -$smallGap*4;
+	left: 0;
+	text-align: center;
+	font-size: $size;
+	width: 100%;
+	z-index: 999999;
+	pointer-events: none;
+	cursor: default;
+
+	.toast {
+		display: inline-block;
+		width: auto;
+		margin: 0 auto $smallGap auto;
+		padding: $smallGap $offset/2;
+		min-height: $offset;
+		line-height: $lineHeightNarrow;
+		font-size: $size;
+		pointer-events: all;
+
+		.close-btn {
+			line-height: $offset - 2;
+			margin: -$smallGap 0 0 $smallGap*3;
+			opacity: .7;
+
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
+}
+
+/**
+ * Framework hacks.
+ */
+.modal {
+	&.modal-sm {
+	    .modal-container {
+	    	max-width: 400px;
+	    }
+	}
+	.loading {
+		position: absolute;
+		bottom: 15px;
+		right: 15px;
+	}
+}
+
+.nbird-main {
+	.code code {
+		background-color: $white;
+		border-radius: $radiusSmall
+	}
+}
+
+/**
+ * Animations.
+ */
+.fadein { animation: $animSpeed wolfFadeIn; }
+.fadeindown { animation: $animSpeed wolfFadeInDown; }
+.blink { animation: wolfBlink $animSpeedSlower cubic-bezier(0.2, 0, 1, 1) infinite alternate;; }
+
+@keyframes wolfBlink {
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+
+@keyframes wolfFadeIn {
+    0% { opacity:0; }
+    100% { opacity:1; }
+}
+
+@keyframes wolfFadeInDown {
+    0% { 
+        opacity:0; 
+        transform: translateY( -200px );
+    }
+    100% { 
+        opacity:1; 
+        transform: translateY( 0 );
+    }
+}
+
+/**
+ * WordPress defaults.
+ */
+#wpfooter,
+.notice /* default WP notices */,
+#update-nag, .update-nag,
+#wpbody-content > .error,
+.woocommerce-message /* woocommerce notices */ { 
+	display: none !important;
+}
+#wpbody-content {
+	padding: 0;
+}

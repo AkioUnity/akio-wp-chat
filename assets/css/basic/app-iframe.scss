@@ -1,0 +1,125 @@
+/**
+ * SCREETS © 2018
+ *
+ * SCREETS, d.o.o. Sarajevo. All rights reserved.
+ * This  is  commercial  software,  only  users  who have purchased a valid
+ * license  and  accept  to the terms of the  License Agreement can install
+ * and use this program.
+ *
+ * @package LiveChatX
+ *
+ */
+
+@import "variables.scss";
+@import "../mixins.scss";
+@import "reset.scss";
+@import "grid.scss";
+
+
+.lcx-widget.lcx { 
+	position: fixed;
+	width: $starterSize + $popupShadowOffset*2;
+
+	@if $position == 'bottom-right' {
+		bottom: $offsetX - $popupShadowOffset;
+		right: $offsetY - $popupShadowOffset;
+	} @else if $position == 'bottom-left' {
+		bottom: $offsetX - $popupShadowOffset;
+		left: $offsetY - $popupShadowOffset;
+	}
+
+
+	height: $starterSize + $popupShadowOffset*2;
+	background: transparent;
+	animation: lcx_starter $animSpeedFast;
+	transition: width $animSpeedFast;
+	z-index: 999990;
+
+	&.lcx--hidden {
+		display: none;
+	}
+
+	&.lcx--open {
+		width: $popupW + ( $popupShadowOffset * 2 );
+		height: $popupH + $offset + $starterSize + ($offset/2);
+		max-height: 92vh;
+		min-height: $popupMinH;
+		transition: none;
+
+		iframe {
+			min-height: $popupMinH;
+		}
+	}
+
+	iframe { 
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.lcx-inApp {
+		position: absolute;
+
+		@if $position == 'bottom-right' {
+			right: $offsetY - $popupShadowOffset;
+		} @else if $position == 'bottom-left' {
+			left: $offsetY - $popupShadowOffset;
+		}
+	
+		bottom: $starterSize + $offsetX;
+		width: 200px;
+		background-color: $white;
+		box-shadow: $popupShadow;
+		padding: $offset/2 $offset;
+		border-radius: $radiusBig;
+		cursor: pointer;
+
+		&:hover {
+			background-color: $lighterBg;
+		}
+
+	}
+	.lcx-inApp-header {
+		font-size: $size2XSmall;
+		font-weight: $weightBold;
+		margin-bottom: $smallGap;
+	}
+	.lcx-inApp-content {
+		font-size: $sizeXSmall;
+		line-height: $lineHeight;
+
+		@include msg;
+	}
+
+	
+	/**
+	 * Mobile view.
+	 */
+	&.lcx-mobileView {
+		&.lcx--open {
+			width: 100%;
+			height: 100%;
+			max-height: 100%;
+			bottom: 0;
+			right: 0;
+			left: 0;
+		}
+	}
+}
+
+@keyframes lcx_starter {
+	from {
+	    opacity: 0;
+	    transform: translate3d(0, 50%, 0);
+	  }
+
+	  to {
+	    opacity: 1;
+	    transform: translate3d(0, 0, 0);
+	  }
+}

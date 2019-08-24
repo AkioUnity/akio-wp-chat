@@ -1,0 +1,133 @@
+/**
+ * Flex grid.
+ *
+ * @link https://philipwalton.github.io/solved-by-flexbox/demos/grids/
+ */
+
+.lcx {
+    .lcx-row {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .lcx-col {
+        flex: 1;
+    }
+
+    .lcx-row--flexCells > .lcx-col {
+        display: flex;
+    }
+
+    .lcx-row--top {
+        align-items: flex-start;
+    }
+
+    .lcx-row--bottom {
+        align-items: flex-end;
+    }
+
+    .lcx-row--center {
+        align-items: center;
+    }
+
+    .lcx-row--justifyCenter {
+        justify-content: center;
+    }
+
+    .lcx-col--top {
+        align-self: flex-start;
+    }
+
+    .lcx-col--bottom {
+        align-self: flex-end;
+    }
+
+    .lcx-col--center {
+        align-self: center;
+    }
+
+    .lcx-col--vCenter {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .lcx-col--vBottom {
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+    }
+
+    .lcx-col--nowrap {
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    .lcx-col--auto {
+        flex: none;
+    }
+
+    .lcx-row--fit > .lcx-col {
+        flex: 1;
+    }
+
+    .lcx-row--full > .lcx-col {
+        flex: 0 0 100%;
+    }
+
+    .lcx-row--1of2 > .lcx-col {
+        flex: 0 0 50%;
+    }
+
+    .lcx-row--1of3 > .lcx-col {
+        flex: 0 0 33.3333%;
+    }
+
+    .lcx-row--1of4 > .lcx-col {
+        flex: 0 0 25%;
+    }
+
+    // Individual column sizing
+    .lcx-col--1of2 {
+        flex: none !important;
+        width: 50% !important;
+    }
+    .lcx-col--1of3 {
+        flex: none !important;
+        width: 33.3% !important;
+    }
+    .lcx-col--1of4 {
+        flex: none !important;
+        width: 25% !important;
+    }
+    .lcx-col--1of5 {
+        flex: none !important;
+        width: 20% !important;
+    }
+
+   
+    .lcx-row--gutters {
+        margin: -#{$gridGutters} 0 $gridGutters -#{$gridGutters};
+        }
+    .lcx-row--gutters > .lcx-col {
+        padding: $gridGutters 0 0 $gridGutters;
+        }
+
+    .lcx-row--guttersLg {
+        margin: -#{$gridGutters*2} 0 $gridGutters*2 -#{$gridGutters*2};
+        }
+    .lcx-row--guttersLg > .lcx-col {
+        padding: $gridGutters*2 0 0 $gridGutters*2;
+        }
+
+    .lcx-row--guttersXl {
+        margin: -#{$gridGutters*3} 0 $gridGutters*3 -#{$gridGutters*3};
+        }
+    .lcx-row--guttersXl > .lcx-col {
+        padding: $gridGutters*3 0 0 $gridGutters*3;
+    }
+    
+}
