@@ -1,8 +1,8 @@
 <?php
 /**
- * SCREETS © 2018
+ * Heino © 2019
  *
- * SCREETS, d.o.o. Sarajevo. All rights reserved.
+ * Heino, All rights reserved.
  * This  is  commercial  software,  only  users  who have purchased a valid
  * license  and  accept  to the terms of the  License Agreement can install
  * and use this program.
@@ -161,7 +161,7 @@ function _fn_lcx_opts_data( $opts ) {
 				array(
 					'id' => 'api',
 					'title' => '<span class="dashicons dashicons-post-status"></span> Screets API key <span class="lcx-req">*</span>',
-					'desc' => '<strong><a href="https://support.screets.io/api/?domain=' . $domain .'" target="_blank">Get your API key</a></strong> <span class="lcx-ico-new-win"></span><br>' . __( 'It is required to activate the plugin and get <strong>free updates</strong>.', 'lcx' ) . '<br><small>* ' . __( 'Note that you might need to re-login WordPress after updating your API key.', 'lcx' ) . '</small>',
+					'desc' => '<strong><a href="https://support.lamoga.de/api/?domain=' . $domain .'" target="_blank">Get your API key</a></strong> <span class="lcx-ico-new-win"></span><br>' . __( 'It is required to activate the plugin and get <strong>free updates</strong>.', 'lcx' ) . '<br><small>* ' . __( 'Note that you might need to re-login WordPress after updating your API key.', 'lcx' ) . '</small>',
 					'placeholder' => 'Screets API Key',
 					'type' => 'text'
 				),
@@ -1461,7 +1461,7 @@ function _fn_lcx_opts_data( $opts ) {
 			'section_description' => '<table style="width:100%;"><tr><td style="width:100%; font-size: 15px; line-height: 1.4em; padding-right: 30px" valign="top"><ol style="margin:0 0 30px 15px;">
 							<li>' . sprintf( 'Create new <a href="%s" target="_blank">Firebase</a> project', 'https://console.firebase.google.com' ) . '</li>
 							<li>Click <span class="dashicons dashicons-admin-generic"></span> and select <strong>Project Settings</strong></li>
-							<li>Change "Public-facing name" as "Screets Live Chat" (optional, but its useful for later.)</li> 
+							<li>Change "Public-facing name" as "Whatsapp Live Chat" (optional, but its useful for later.)</li> 
 							<li>Find <strong>Project ID</strong> and <strong>Web API key</strong> and copy/paste to related fields on this page below.</li>
 							<li>Go to "Service accounts" tab.</li>
 							<li>Click "Generate New Private key" button and download JSON file.</li>

@@ -1,11 +1,11 @@
 <?php
 /*
-  Plugin Name: Screets Live Chat
-  Plugin URI: https://screets.io
-  Description: A beautiful, intelligent <strong>chat tool</strong>.
-  Version: 2.8.5
-  Author: Screets
-  Author URI: https://screets.io
+  Plugin Name: Whatsapp Live Chat
+  Plugin URI: https://lamoga.de
+  Description: A beautiful, intelligent <strong>Whatsapp chat tool</strong>.
+  Version: 1.0.1
+  Author: Akio
+  Author URI: https://lamoga.de
   Requires at least: 5.0
   Tested up to: 5.2.2
   Text Domain: lcx
@@ -13,16 +13,16 @@
 */
 
 /**
- * SCREETS © 2018
+ * Heino © 2019
  *
- * SCREETS, d.o.o. Sarajevo. All rights reserved.
+ * Heino, All rights reserved.
  * This  is  commercial  software,  only  users  who have purchased a valid
  * license  and  accept  to the terms of the  License Agreement can install
  * and use this program.
  *
  * @package LiveChatX
- * @author Screets
- * @link https://screets.com
+ * @author Akio
+ * @link https://lomago.io
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit;
@@ -40,7 +40,7 @@ final class LiveChatX
 	 * @var string
 	 * @since Live Chat X (2.4.0)
 	 */
-	public $version = '2.8.5';
+	public $version = '1.0.1';
 
 	/**
 	 * Database version.
@@ -88,7 +88,7 @@ final class LiveChatX
 	 * @var string
 	 * @since Live Chat X (2.4.0)
 	 */
-	public $url = 'https://screets.com/chat';
+	public $url = 'https://lomago.io/chat';
 
 	/**
 	 * Options data.
@@ -203,7 +203,7 @@ final class LiveChatX
 		define( 'LCX_VERSION', $this->version );
 		define( 'LCX_API_VERSION', $this->api_version );
 		define( 'LCX_PATH', untrailingslashit( plugin_dir_path( __FILE__ ) ) );
-		define( 'LCX_CHANGELOG_URL', 'https://screets.com/livechat/changelog.php' );
+		define( 'LCX_CHANGELOG_URL', 'https://lomago.io/livechat/changelog.php' );
 		define( 'LCX_URL', plugin_dir_url( dirname( __FILE__ ) ) . 'akio-wp-chat' );
 		define( 'LCX_SLUG', 'lcx' );
 		
@@ -432,7 +432,7 @@ if( is_admin() ) {
 
 				require LCX_PATH . '/core/library/update-checker/plugin-update-checker.php';
 				$checker = Puc_v4_Factory::buildUpdateChecker(
-					'https://support.screets.io/updates/wp/?action=get_metadata&slug=screets-' . LCX_SLUG,
+					'https://support.lamoga.de/updates/wp/?action=get_metadata&slug=screets-' . LCX_SLUG,
 					__FILE__,
 					'screets-' . LCX_SLUG
 				);

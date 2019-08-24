@@ -2,13 +2,13 @@
 /**
  * SCREETS © 2017
  *
- * SCREETS, d.o.o. Sarajevo. All rights reserved.
+ * Heino, All rights reserved.
  * This  is  commercial  software,  only  users  who have purchased a valid
  * license  and  accept  to the terms of the  License Agreement can install
  * and use this program.
  *
  * @package LiveChatX
- * @author Screets
+ * @author Akio
  *
  */
 
@@ -35,7 +35,7 @@ if( !empty( $plugins ) ) {
     <div class="lcx-row lcx-row--1of3">
     <?php if( !empty( $extensions ) ): foreach( $extensions as $slug => $extension ): 
         $is_active = is_plugin_active( $slug );
-        $plugin_name = trim( str_replace( 'Screets Live Chat X -', '', $extension['Name'] ) );
+        $plugin_name = trim( str_replace( 'Whatsapp Live Chat X -', '', $extension['Name'] ) );
     ?>
         <div class="lcx-col lcx-ext <?php echo ( $is_active ) ? 'lcx-active' : ''; ?>">
             <span class="lcx-title"><?php echo $plugin_name; ?></span>

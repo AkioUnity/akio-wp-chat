@@ -1,7 +1,7 @@
 /*!
- * Live Chat X, by Screets.
+ * Live Chat X, by Akio.
  *
- * SCREETS, d.o.o. Sarajevo. All rights reserved.
+ * Heino, All rights reserved.
  * This  is  commercial  software,  only  users  who have purchased a valid
  * license  and  accept  to the terms of the  License Agreement can install
  * and use this program.
@@ -1247,7 +1247,7 @@ class nightBird {
 		const time = NBird.time( msg.date, this.opts.hourFormat );
 		const date = NBird.time( msg.date, this.opts.dateFormat );
 
-		// Set author desc (i.e. by Screets)
+		// Set author desc (i.e. by Akio)
 		const authorDesc = '';
 
 		item.className = classes.join(' ');

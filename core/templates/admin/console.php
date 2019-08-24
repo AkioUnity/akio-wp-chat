@@ -1,14 +1,14 @@
 <?php
 /**
- * SCREETS © 2018
+ * Heino © 2019
  *
- * SCREETS, d.o.o. Sarajevo. All rights reserved.
+ * Heino, All rights reserved.
  * This  is  commercial  software,  only  users  who have purchased a valid
  * license  and  accept  to the terms of the  License Agreement can install
  * and use this program.
  *
  * @package LiveChatX
- * @author Screets
+ * @author Akio
  *
  */
 if ( ! defined( 'ABSPATH' ) ) { exit; } 

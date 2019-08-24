@@ -1,14 +1,14 @@
 <?php
 /**
-* SCREETS © 2018
+* Heino © 2019
 *
-* SCREETS, d.o.o. Sarajevo. All rights reserved.
+* Heino, All rights reserved.
 * This  is  commercial  software,  only  users  who have purchased a valid
 * license  and  accept  to the terms of the  License Agreement can install
 * and use this program.
 *
 * @package LiveChatX
-* @author Screets
+* @author Akio
 *
 */
 if ( ! defined( 'ABSPATH' ) ) { exit; }
@@ -191,7 +191,7 @@ class LiveChatX_Admin extends LiveChatX_Abstract {
 		}
 		?>
 
-		<!-- <iframe id="lcx-iframe" src="//support.screets.io/extensions/?p=<?php echo LCX_SLUG; ?>&amp;v=<?php echo LCX_VERSION; ?>&amp;installed=<?php echo http_build_query( $installedExts ); ?>&amp;api=<?php echo lcx_get_option( 'general', 'license_api' ); ?>" frameborder="0"></iframe> -->
+		<!-- <iframe id="lcx-iframe" src="//support.lamoga.de/extensions/?p=<?php echo LCX_SLUG; ?>&amp;v=<?php echo LCX_VERSION; ?>&amp;installed=<?php echo http_build_query( $installedExts ); ?>&amp;api=<?php echo lcx_get_option( 'general', 'license_api' ); ?>" frameborder="0"></iframe> -->
 	<?php }
 
 	/**
@@ -200,7 +200,7 @@ class LiveChatX_Admin extends LiveChatX_Abstract {
 	function render_support() { 
 		global $wp_version;
 		?>
-		<iframe id="lcx-iframe" src="//support.screets.io/inapp/?p=<?php echo LCX_SLUG; ?>&amp;v=<?php echo LCX_VERSION; ?>&amp;api=<?php echo lcx_get_option( 'general', 'license_api' ); ?>&amp;php=<?php echo phpversion(); ?>&amp;wp=<?php echo $wp_version; ?>" frameborder="0"></iframe>
+		<iframe id="lcx-iframe" src="//support.lamoga.de/inapp/?p=<?php echo LCX_SLUG; ?>&amp;v=<?php echo LCX_VERSION; ?>&amp;api=<?php echo lcx_get_option( 'general', 'license_api' ); ?>&amp;php=<?php echo phpversion(); ?>&amp;wp=<?php echo $wp_version; ?>" frameborder="0"></iframe>
 
 		<style>
 			#wpfooter { display: none; }
